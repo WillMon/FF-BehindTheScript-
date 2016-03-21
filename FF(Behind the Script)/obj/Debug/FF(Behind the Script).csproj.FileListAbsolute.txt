@@ -1,0 +1,10 @@
+c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(Behind the Script)\bin\Debug\FF(Behind the Script).dll
+c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(Behind the Script)\bin\Debug\FF(Behind the Script).pdb
+c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(Behind the Script)\obj\Debug\FF(Behind the Script).dll
+c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(Behind the Script)\obj\Debug\FF(Behind the Script).pdb
+c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(Behind the Script)\obj\Debug\FF(Behind the Script).csprojResolveAssemblyReference.cache
+C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(Behind the Script)\bin\Debug\FF(Behind the Script).dll
+C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(Behind the Script)\bin\Debug\FF(Behind the Script).pdb
+C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(Behind the Script)\obj\Debug\FF(Behind the Script).csprojResolveAssemblyReference.cache
+C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(Behind the Script)\obj\Debug\FF(Behind the Script).dll
+C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(Behind the Script)\obj\Debug\FF(Behind the Script).pdb
