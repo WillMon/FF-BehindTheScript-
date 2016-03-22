@@ -64,6 +64,7 @@ namespace FF_At_the_scene_
             this.btn_StatsCheck.TabIndex = 6;
             this.btn_StatsCheck.Text = "ChrStats";
             this.btn_StatsCheck.UseVisualStyleBackColor = true;
+            this.btn_StatsCheck.Click += new System.EventHandler(this.btn_StatsCheck_Click);
             // 
             // txt_StatDispaly
             // 
@@ -91,7 +92,7 @@ namespace FF_At_the_scene_
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.txt_StatDispaly);
             this.groupBox1.Controls.Add(this.btn_StatsCheck);
-            this.groupBox1.Location = new System.Drawing.Point(1113, 540);
+            this.groupBox1.Location = new System.Drawing.Point(1111, 639);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(542, 347);
             this.groupBox1.TabIndex = 10;
@@ -112,7 +113,7 @@ namespace FF_At_the_scene_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1854, 917);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.ControlBox = false;
             this.Controls.Add(this.pic_Chr);
             this.Controls.Add(this.groupBox1);
@@ -120,6 +121,7 @@ namespace FF_At_the_scene_
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FF_Console";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FF_Console";
             this.Load += new System.EventHandler(this.FF_Console_Load);
             this.groupBox1.ResumeLayout(false);

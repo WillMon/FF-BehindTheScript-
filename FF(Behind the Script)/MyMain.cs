@@ -18,7 +18,7 @@ namespace ADGP_125
         {
             
             // Creates a a FinitSra
-            FinistateStatMachine fsm = new FinistateStatMachine(PlayerStates.run);
+            FinistateStatMachine<Enum> fsm = new FinistateStatMachine<Enum>(PlayerStates.run);
 
             fsm.AddStat(PlayerStates.init);
             fsm.AddStat(PlayerStates.idle);
