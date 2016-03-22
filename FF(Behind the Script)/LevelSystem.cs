@@ -36,7 +36,7 @@ namespace ADGP_125
                 if (_expCap <= _expMaxCap)
                 {
                     _exp += _expGain;
-                    if (_exp >= _expCap) { }
+                    if (_exp <= _expCap) { }
                 }
             }
         }

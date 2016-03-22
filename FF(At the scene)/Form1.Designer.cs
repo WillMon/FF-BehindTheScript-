@@ -32,11 +32,13 @@ namespace FF_At_the_scene_
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btn_Press = new System.Windows.Forms.Button();
-            this.btn_StatsCheck = new System.Windows.Forms.Button();
-            this.txt_StatDispaly = new System.Windows.Forms.TextBox();
+            this.btn_2 = new System.Windows.Forms.Button();
+            this.txt_Display = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic_Chr = new System.Windows.Forms.PictureBox();
+            this.btn_1 = new System.Windows.Forms.Button();
+            this.btn_quit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).BeginInit();
             this.SuspendLayout();
@@ -56,23 +58,24 @@ namespace FF_At_the_scene_
             this.btn_Press.UseVisualStyleBackColor = true;
             this.btn_Press.Click += new System.EventHandler(this.btn_Press_Click_1);
             // 
-            // btn_StatsCheck
+            // btn_2
             // 
-            this.btn_StatsCheck.Location = new System.Drawing.Point(277, 288);
-            this.btn_StatsCheck.Name = "btn_StatsCheck";
-            this.btn_StatsCheck.Size = new System.Drawing.Size(158, 33);
-            this.btn_StatsCheck.TabIndex = 6;
-            this.btn_StatsCheck.Text = "ChrStats";
-            this.btn_StatsCheck.UseVisualStyleBackColor = true;
-            this.btn_StatsCheck.Click += new System.EventHandler(this.btn_StatsCheck_Click);
+            this.btn_2.Location = new System.Drawing.Point(196, 298);
+            this.btn_2.Name = "btn_2";
+            this.btn_2.Size = new System.Drawing.Size(158, 33);
+            this.btn_2.TabIndex = 6;
+            this.btn_2.Text = "button2";
+            this.btn_2.UseVisualStyleBackColor = true;
+            this.btn_2.Click += new System.EventHandler(this.btn_Init_Click);
             // 
-            // txt_StatDispaly
+            // txt_Display
             // 
-            this.txt_StatDispaly.Location = new System.Drawing.Point(168, 198);
-            this.txt_StatDispaly.Multiline = true;
-            this.txt_StatDispaly.Name = "txt_StatDispaly";
-            this.txt_StatDispaly.Size = new System.Drawing.Size(353, 84);
-            this.txt_StatDispaly.TabIndex = 8;
+            this.txt_Display.Location = new System.Drawing.Point(168, 198);
+            this.txt_Display.Multiline = true;
+            this.txt_Display.Name = "txt_Display";
+            this.txt_Display.ReadOnly = true;
+            this.txt_Display.Size = new System.Drawing.Size(353, 84);
+            this.txt_Display.TabIndex = 8;
             // 
             // listBox1
             // 
@@ -89,9 +92,11 @@ namespace FF_At_the_scene_
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btn_quit);
+            this.groupBox1.Controls.Add(this.btn_1);
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.txt_StatDispaly);
-            this.groupBox1.Controls.Add(this.btn_StatsCheck);
+            this.groupBox1.Controls.Add(this.txt_Display);
+            this.groupBox1.Controls.Add(this.btn_2);
             this.groupBox1.Location = new System.Drawing.Point(1111, 639);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(542, 347);
@@ -107,6 +112,26 @@ namespace FF_At_the_scene_
             this.pic_Chr.TabIndex = 11;
             this.pic_Chr.TabStop = false;
             this.pic_Chr.Click += new System.EventHandler(this.pic_Chr_Click_1);
+            // 
+            // btn_1
+            // 
+            this.btn_1.Location = new System.Drawing.Point(16, 298);
+            this.btn_1.Name = "btn_1";
+            this.btn_1.Size = new System.Drawing.Size(157, 33);
+            this.btn_1.TabIndex = 10;
+            this.btn_1.Text = "button1";
+            this.btn_1.UseVisualStyleBackColor = true;
+            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
+            // 
+            // btn_quit
+            // 
+            this.btn_quit.Location = new System.Drawing.Point(374, 298);
+            this.btn_quit.Name = "btn_quit";
+            this.btn_quit.Size = new System.Drawing.Size(147, 33);
+            this.btn_quit.TabIndex = 11;
+            this.btn_quit.Text = "Quit";
+            this.btn_quit.UseVisualStyleBackColor = true;
+            this.btn_quit.Click += new System.EventHandler(this.btn_quit_Click);
             // 
             // FF_Console
             // 
@@ -134,11 +159,13 @@ namespace FF_At_the_scene_
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btn_Press;
-        private System.Windows.Forms.Button btn_StatsCheck;
-        private System.Windows.Forms.TextBox txt_StatDispaly;
+        private System.Windows.Forms.Button btn_2;
+        private System.Windows.Forms.TextBox txt_Display;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pic_Chr;
+        private System.Windows.Forms.Button btn_1;
+        private System.Windows.Forms.Button btn_quit;
     }
 }
 

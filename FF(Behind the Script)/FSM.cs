@@ -21,8 +21,8 @@ namespace ADGP_125
             }
         }
 
-        public T m_currentState;
-        Dictionary<T, List<Transition>> m_transtionTable;
+        T _currentState;
+        Dictionary<T, List<Transition>> _transtionTable;
         List<T> m_States;
 
         //List<Enum> validTrans;
@@ -36,8 +36,8 @@ namespace ADGP_125
         {
             m_States = new List<T>();
             //validTrans = new List<Enum>();
-            m_transtionTable = new Dictionary<T, List<Transition>>();
-            m_currentState = intial;
+            _transtionTable = new Dictionary<T, List<Transition>>();
+            _currentState = intial;
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace ADGP_125
             
             if (!m_States.Contains(state)) { // List<>.Contains ~ Lets me know if the elements in the list(returning a bool)
                 m_States.Add(state);
-                m_transtionTable.Add(state, new List<Transition>());
+                _transtionTable.Add(state, new List<Transition>());
                 return false;
             }
             else {
@@ -73,7 +73,7 @@ namespace ADGP_125
                 ++count;
 
             }
-            Console.WriteLine("Current Stat(s) is: " + m_currentState.ToString());
+            Console.WriteLine("Current Stat(s) is: " + _currentState.ToString());
 
         }
 
@@ -89,9 +89,9 @@ namespace ADGP_125
 
             Transition _t = new Transition(from, to);
 
-            if (m_transtionTable.ContainsKey(from))
+            if (_transtionTable.ContainsKey(from))
             {
-                m_transtionTable[m_currentState].Add(_t);
+                _transtionTable[_currentState].Add(_t);
                 return true;
             }
             return false;
@@ -182,15 +182,17 @@ namespace ADGP_125
         /// <param name="To"></param>
         public void ChangeState(T To)
         {
-            List<Transition> validTransitions = m_transtionTable[m_currentState];
+            List<Transition> validTransitions = _transtionTable[_currentState];
             foreach (Transition t in validTransitions)
             {
                 //if To is the name of where you want to go
                 if(To.Equals(t._to))
-                    m_currentState = t._to;
+                    _currentState = t._to;
             }
 
         }
+        public T CurrentStat() { return _currentState; }
+
     }
 }       
             
