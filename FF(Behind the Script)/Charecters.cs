@@ -12,9 +12,11 @@ namespace ADGP_125
 
         interface ICommonChrStat
         {
+            string _chrClass { get; set; }
+            string _chrID { get; set; }
             float _attMultyPlyer { get; set; }
             int _health { get; set; }
-            int _stamina { get; set; }
+            int _staminaGap { get; set; }
             double _exp { get; set; }
 
 
@@ -29,20 +31,20 @@ namespace ADGP_125
         public class Player : ICommonChrStat
         {
 
-            string _chrClass { get; set; }
-            string _chrID { get; set; }
+            public string _chrClass { get; set; }
+            public string _chrID { get; set; }
             public float _attMultyPlyer { get; set; }
             public int _health { get; set; }
-            public int _stamina { get; set; }
+            public int _staminaGap { get; set; }
             public double _exp { get; set; }
 
-            public Player(int health, int stamina)
+            public Player(string chrClass, string chrID, int health, int staminaGap)
             {
-                _chrClass = "Sentinal";
-                _chrID = "Snow";
+                _chrClass = chrClass;
+                _chrID = chrID;
                 _attMultyPlyer = .5f;
                 _health = health;
-                _stamina = stamina;
+                _staminaGap = staminaGap;
                 _exp = 0;
 
 
@@ -62,20 +64,20 @@ namespace ADGP_125
             public class Enemy : ICommonChrStat
             {
 
-                string _chrClass { get; set; }
-                string _chrID { get; set; }
+                public string _chrClass { get; set; }
+                public string _chrID { get; set; }
                 public float _attMultyPlyer { get; set; }
                 public int _health { get; set; }
-                public int _stamina { get; set; }
+                public int _staminaGap { get; set; }
                 public double _exp { get; set; }
 
-                public Enemy(int health, int stamina)
+                public Enemy(int health, int stamina) 
                 {
                     _chrClass = "Beast";
                     _chrID = "Salamon";
                     _attMultyPlyer = .5f;
                     _health = health;
-                    _stamina = stamina;
+                    _staminaGap = stamina;
                     _exp = 0;
 
 

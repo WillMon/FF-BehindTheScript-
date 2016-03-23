@@ -11,6 +11,8 @@ using ADGP_125;
 
 namespace FF_At_the_scene_
 {
+
+    enum gameFSM {Init, Start, Combot, IOsFile, End, }
      
     public partial class FF_Console : Form
     {
@@ -19,88 +21,62 @@ namespace FF_At_the_scene_
             
             InitializeComponent();
         }
-        public static string _intiString = "This is whats needed to be displayed";
-        string _button1 = "Transition";
-        string _button2 = "Next Transition";
-        FinistateStatMachine<string> GAMEFSM = new FinistateStatMachine<string>(_intiString);
-        
 
-        public static  Image snow = Properties.Resources.Snow;
-        public Image m_snow = Properties.Resources.Snow;
-        public Image m_rikku = Properties.Resources.Rikku;
-
-        FinistateStatMachine<Image> chrSelect = new FinistateStatMachine<Image>(snow);
+        public Image _snow = Properties.Resources.Snow;
+        public Image _rikku = Properties.Resources.Rikku;
+        Charecters.Player _p_snow = new Charecters.Player("Sentinal","Snow", 1200, 100);
+        Charecters.Player _p_rikku = new Charecters.Player("Mage", "Rikku", 880, 200 );
+        FinistateStatMachine<gameFSM> _gameFSM = new FinistateStatMachine<gameFSM>(gameFSM.Init);
         int count = 0 ;
         private void FF_Console_Load(object sender, EventArgs e)
         {
+            btn_mage.Visible = false;
 
-            txt_Display.Text = GAMEFSM.CurrentStat();
+            _gameFSM.AddStat(gameFSM.Init);
+            _gameFSM.AddStat(gameFSM.Start);
+            _gameFSM.AddStat(gameFSM.Combot);
+            _gameFSM.AddStat(gameFSM.IOsFile);
+            _gameFSM.AddStat(gameFSM.End);
 
-            GAMEFSM.AddStat(_button1);
-            GAMEFSM.AddStat(_button2);
+            _gameFSM.AddTransiton(gameFSM.Init, gameFSM.Start);
+            _gameFSM.AddTransiton(gameFSM.Start, gameFSM.Combot);
+            _gameFSM.AddTransiton(gameFSM.Start, gameFSM.IOsFile);
+            _gameFSM.AddTransiton(gameFSM.Start, gameFSM.End);
+            _gameFSM.AddTransiton(gameFSM.Combot, gameFSM.IOsFile);
+            _gameFSM.AddTransiton(gameFSM.Combot, gameFSM.End);
+            _gameFSM.AddTransiton(gameFSM.IOsFile, gameFSM.Combot);
 
-            GAMEFSM.AddTransiton(_intiString, _button1);
-            GAMEFSM.AddTransiton(_button1, _button2);
-
-
-
-
-            //chrSelect.AddStat(snow);
-            //chrSelect.AddStat(m_rikku);
-
-            //chrSelect.AddTransiton(snow, m_snow);
-            //chrSelect.AddTransiton(m_snow, m_rikku);
-            //chrSelect.AddTransiton(m_rikku, m_snow);
-            // The Image placed on the Main Screen
+            _gameFSM.ChangeState(gameFSM.Start);
 
             BackgroundImage = Properties.Resources.main_backGround;
         }
-        
-       
 
-        private void pic_Chr_Click(object sender, EventArgs e)
+        private void btn_sentinal_Click(object sender, EventArgs e)
         {
+            txt_chrInfoDisplay.Text = "Class: " + _p_snow._chrClass + "\n                 " + "Name: " + _p_snow._chrID +  "\n                       " + "Health: " + _p_snow._health ;
+            pic_Chr.BackgroundImage = _snow;
+            _gameFSM.ChangeState(gameFSM.Start);
+            btn_sentinal.Visible = false;
+            btn_mage.Visible = true;
+
             
         }
 
-        private void btn_Press_Click_1(object sender, EventArgs e)
+        private void btn_mage_Click(object sender, EventArgs e)
         {
-            
-            pic_Chr.BackgroundImage = chrSelect.CurrentStat();
-            
-
-            
-            
-            
-            //MessageBox.Show(lvl.m_level.ToString());
+            txt_chrInfoDisplay.Text = "Class: " + _p_rikku._chrClass + "\n                 " + "Name: " + _p_rikku._chrID + "\n                       " + "Health: " + _p_rikku._health;
+            pic_Chr.BackgroundImage = _rikku;
+            _gameFSM.ChangeState(gameFSM.Start);
+            btn_mage.Visible = false;
+            btn_sentinal.Visible = true;
         }
 
-        private void pic_Chr_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_StatsCheck_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btn_Init_Click(object sender, EventArgs e)
-        {
-            GAMEFSM.ChangeState(_button1);
-           txt_Display.Text = GAMEFSM.CurrentStat();
-        }
-
-        private void btn_1_Click(object sender, EventArgs e)
-        {
-            GAMEFSM.ChangeState(_button2);
-            txt_Display.Text = GAMEFSM.CurrentStat();
-        }
-
-        private void btn_quit_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+      
     }
 
 }
