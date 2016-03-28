@@ -14,16 +14,11 @@ namespace ADGP_125
         {
             string _chrClass { get; set; }
             string _chrID { get; set; }
-            float _attMultyPlyer { get; set; }
-            int _health { get; set; }
+            float _dmg { get; set; }
+            float _health { get; set; }
             int _staminaGap { get; set; }
             double _exp { get; set; }
 
-
-
-
-            void TakeDmg();
-            void DealDmg();
 
         }
 
@@ -33,32 +28,28 @@ namespace ADGP_125
 
             public string _chrClass { get; set; }
             public string _chrID { get; set; }
-            public float _attMultyPlyer { get; set; }
-            public int _health { get; set; }
+            public float _dmg { get; set; }
+            public float _health { get; set; }
             public int _staminaGap { get; set; }
             public double _exp { get; set; }
 
-            public Player(string chrClass, string chrID, int health, int staminaGap)
+            public Player(string chrClass, string chrID, int health, int staminaCap, int dmg )
             {
                 _chrClass = chrClass;
                 _chrID = chrID;
-                _attMultyPlyer = .5f;
+                _dmg = dmg;
                 _health = health;
-                _staminaGap = staminaGap;
+                _staminaGap = staminaCap;
                 _exp = 0;
 
 
             }
 
-            public void TakeDmg()
+            public void TakeDmg(Enemy playerStats)
             {
-
+                _health -= playerStats._dmg;
             }
-
-            public void DealDmg()
-            {
-
-            }
+            
 
 
             public class Enemy : ICommonChrStat
@@ -66,16 +57,15 @@ namespace ADGP_125
 
                 public string _chrClass { get; set; }
                 public string _chrID { get; set; }
-                public float _attMultyPlyer { get; set; }
-                public int _health { get; set; }
+                public float _dmg { get; set; }
+                public float _health { get; set; }
                 public int _staminaGap { get; set; }
                 public double _exp { get; set; }
-
-                public Enemy(int health, int stamina) 
+                int dmgDrop;
+                public Enemy(string chrID, int health, int stamina, int dmg)
                 {
-                    _chrClass = "Beast";
-                    _chrID = "Salamon";
-                    _attMultyPlyer = .5f;
+                    _chrID = chrID;
+                    _dmg = dmg ;
                     _health = health;
                     _staminaGap = stamina;
                     _exp = 0;
@@ -83,80 +73,14 @@ namespace ADGP_125
 
                 }
 
-                public void TakeDmg()
+                public void TakeDmg(Player player )
                 {
-
-                }
-
-                public void DealDmg()
-                {
-
+                    _health -= player._dmg;
                 }
 
             }
-            //public class Sentinel : ICommonChrStat
-            //{
-            //    string _chrClass { get; set; }
-            //    string _chrID { get; set; }
-            //    public float _attMultyPlyer { get; set; }
-            //    public int _health { get; set; }
-            //    public int _stamina { get; set; }
-            //    public double _exp { get; set; }
-
-            //    public Sentinel(int health, int stamina)
-            //    {
-            //        _chrClass = "Sentinel";
-            //        _chrID = "Snow";
-            //        _attMultyPlyer = .3f;
-            //        _health = health;
-            //        _stamina = stamina;
-            //        _exp = 0;
-
-            //    }
-
-            //    public void TakeDmg()
-            //    {
-
-            //    }
-
-            //    public void DealDmg()
-            //    {
-
-            //    }
         }
-        //public class Warrior : ICommonChrStat
-        //{
-        //    string _chrClass { get; set; }
-        //    string _chrID { get; set; }
-        //    public float _attMultyPlyer { get; set; }
-        //    public int _health { get; set; }
-        //    public int _stamina { get; set; }
-        //    public double _exp { get; set; }
 
-        //    public Warrior(int health, int stamina)
-        //    {
-        //        _chrClass = "Commando";
-        //        _chrID = "Cloud";
-        //        _attMultyPlyer = .9f;
-        //        _health = health;
-        //        _stamina = stamina;
-        //        _exp = 0;
+    }
 
-        //    }
-
-        //    public void TakeDmg()
-        //    {
-
-        //    }
-
-        //    public void DealDmg()
-        //    {
-
-        //    }
-
-    } 
-
-        
-       
-    
 }

@@ -34,3 +34,4 @@ C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At 
 C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.FF_Console.resources
 C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.Properties.Resources.resources
 C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).csproj.GenerateResource.Cache
+C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.Combot.resources

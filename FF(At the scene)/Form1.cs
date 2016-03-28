@@ -26,6 +26,7 @@ namespace FF_At_the_scene_
         public Image _rikku = Properties.Resources.Rikku;
         Charecters.Player _p_snow = new Charecters.Player("Sentinal","Snow", 1200, 100);
         Charecters.Player _p_rikku = new Charecters.Player("Mage", "Rikku", 880, 200 );
+
         FinistateStatMachine<gameFSM> _gameFSM = new FinistateStatMachine<gameFSM>(gameFSM.Init);
         int count = 0 ;
         private void FF_Console_Load(object sender, EventArgs e)
@@ -53,19 +54,22 @@ namespace FF_At_the_scene_
 
         private void btn_sentinal_Click(object sender, EventArgs e)
         {
-            txt_chrInfoDisplay.Text = "Class: " + _p_snow._chrClass + "\n                 " + "Name: " + _p_snow._chrID +  "\n                       " + "Health: " + _p_snow._health ;
+            txt_chrInfoDisplay.Text = "Class: " + _p_snow._chrClass + "\nName: " + _p_snow._chrID +  "\nHealth: " + _p_snow._health ;
             pic_Chr.BackgroundImage = _snow;
             _gameFSM.ChangeState(gameFSM.Start);
             btn_sentinal.Visible = false;
             btn_mage.Visible = true;
+
 
             
         }
 
         private void btn_mage_Click(object sender, EventArgs e)
         {
-            txt_chrInfoDisplay.Text = "Class: " + _p_rikku._chrClass + "\n                 " + "Name: " + _p_rikku._chrID + "\n                       " + "Health: " + _p_rikku._health;
+            txt_chrInfoDisplay.Text = "Class: " + _p_rikku._chrClass + "\nName: " + _p_rikku._chrID + "\n" + "Health: " + _p_rikku ._health;
             pic_Chr.BackgroundImage = _rikku;
+            //_playerLevel.Level();
+            //txt_chrInfoDisplay.Text = _playerLevel.PlayerStatInfo();
             _gameFSM.ChangeState(gameFSM.Start);
             btn_mage.Visible = false;
             btn_sentinal.Visible = true;
@@ -76,7 +80,11 @@ namespace FF_At_the_scene_
             Close();
         }
 
-      
+        private void pic_Chr_Click(object sender, EventArgs e)
+        {
+            if(pic_Chr.BackgroundImage == _snow) { _gameFSM.ChangeState(gameFSM.Combot); this.Hide();Combot _combot = new Combot(); _combot.Show(); }
+            else if(pic_Chr.BackgroundImage == _rikku) { _gameFSM.ChangeState(gameFSM.Combot); }
+        }
     }
 
 }

@@ -117,6 +117,7 @@ namespace FF_At_the_scene_
             this.pic_Chr.Size = new System.Drawing.Size(209, 488);
             this.pic_Chr.TabIndex = 11;
             this.pic_Chr.TabStop = false;
+            this.pic_Chr.Click += new System.EventHandler(this.pic_Chr_Click);
             // 
             // btn_sentinal
             // 
@@ -150,11 +151,11 @@ namespace FF_At_the_scene_
             // 
             // txt_chrInfoDisplay
             // 
-            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(318, 373);
+            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(348, 463);
             this.txt_chrInfoDisplay.Multiline = true;
             this.txt_chrInfoDisplay.Name = "txt_chrInfoDisplay";
-            this.txt_chrInfoDisplay.Size = new System.Drawing.Size(205, 170);
-            this.txt_chrInfoDisplay.TabIndex = 15;
+            this.txt_chrInfoDisplay.Size = new System.Drawing.Size(101, 130);
+            this.txt_chrInfoDisplay.TabIndex = 16;
             // 
             // FF_Console
             // 

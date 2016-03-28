@@ -63,6 +63,16 @@ namespace FF_At_the_scene_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Caius {
+            get {
+                object obj = ResourceManager.GetObject("Caius", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap main_backGround {
             get {
                 object obj = ResourceManager.GetObject("main_backGround", resourceCulture);
