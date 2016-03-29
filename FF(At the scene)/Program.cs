@@ -16,7 +16,7 @@ namespace FF_At_the_scene_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Combot());
+            Application.Run(new FF_Console());
         }
     }
 }

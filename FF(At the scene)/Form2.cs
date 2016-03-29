@@ -11,25 +11,50 @@ using ADGP_125;
 
 namespace FF_At_the_scene_
 {
-    public partial class Combot : Form
+    
+    public partial class Combot : Form 
     {
-        LevelingSystem.Player _playerLevel = new LevelingSystem.Player(100);
+        
+
+        Characters.Enemy _Chre_caius = new Characters.Enemy("Caius", 1000, 400, 200, 30);
+        Characters.Player p = new Characters.Player();
 
         public Combot()
         {
             InitializeComponent();
+            p = FF_Console._playersChoose;
+
+            LevelingSystem.Enemy _LSe_Caius = new LevelingSystem.Enemy(_Chre_caius);
+            LevelingSystem.Player _playerLevel = new LevelingSystem.Player(_Chre_caius);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            _playerLevel.Level();
+            BackgroundImage = Properties.Resources.Combat_Envierment;
+
+            pic_Chr.BackgroundImage = FF_Console._currentCharacter;
+
+            pgb_Turn.BackColor = Color.Gold;
+
+            while(pgb_Turn.Value <= pgb_Turn.Maximum)
+                pgb_Turn.Value += timer_Player.Interval;
+
             
+
+            //_playerLevel.Level();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txt_playerStats.Text = _playerLevel.PlayerStatInfo();
  
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+
+            Close();
+        }
+
+        private void pic_Chr_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

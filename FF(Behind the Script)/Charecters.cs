@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ADGP_125
 {
-    [Serializable()]
-    public class Charecters
+    [Serializable]
+    public class Characters
     {
-
+        public Characters() { }
+        
         interface ICommonChrStat
         {
             string _chrClass { get; set; }
@@ -22,7 +23,6 @@ namespace ADGP_125
 
         }
 
-
         public class Player : ICommonChrStat
         {
 
@@ -33,7 +33,9 @@ namespace ADGP_125
             public int _staminaGap { get; set; }
             public double _exp { get; set; }
 
-            public Player(string chrClass, string chrID, int health, int staminaCap, int dmg )
+            public Player()
+            { }
+            public Player(string chrClass, string chrID, int health, int staminaCap, int dmg)
             {
                 _chrClass = chrClass;
                 _chrID = chrID;
@@ -45,42 +47,46 @@ namespace ADGP_125
 
             }
 
+            public string PlayerInfo()
+            {
+                return "Class: " + _chrClass + "\nName: " + _chrID + "\nHealth: " +_health;
+            }
             public void TakeDmg(Enemy playerStats)
             {
                 _health -= playerStats._dmg;
             }
-            
 
-
-            public class Enemy : ICommonChrStat
-            {
-
-                public string _chrClass { get; set; }
-                public string _chrID { get; set; }
-                public float _dmg { get; set; }
-                public float _health { get; set; }
-                public int _staminaGap { get; set; }
-                public double _exp { get; set; }
-                int dmgDrop;
-                public Enemy(string chrID, int health, int stamina, int dmg)
-                {
-                    _chrID = chrID;
-                    _dmg = dmg ;
-                    _health = health;
-                    _staminaGap = stamina;
-                    _exp = 0;
-
-
-                }
-
-                public void TakeDmg(Player player )
-                {
-                    _health -= player._dmg;
-                }
-
-            }
         }
 
+        public class Enemy : ICommonChrStat
+        {
+
+            public string _chrClass { get; set; }
+            public string _chrID { get; set; }
+            public float _dmg { get; set; }
+            public float _health { get; set; }
+            public int _staminaGap { get; set; }
+            public double _exp { get; set; }
+            public float _expDrop;
+            public Enemy(string chrID, int health, int stamina, float expDrop, int dmg)
+            {
+                _chrID = chrID;
+                _dmg = dmg;
+                _health = health;
+                _staminaGap = stamina;
+                _exp = 0;
+                _expDrop = expDrop;
+
+
+            }
+
+            public void TakeDmg(Player player)
+            {
+                _health -= player._dmg;
+            }
+
+        }
     }
 
 }
+

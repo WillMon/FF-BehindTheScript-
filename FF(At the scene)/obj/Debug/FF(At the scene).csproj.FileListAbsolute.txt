@@ -1,37 +1,12 @@
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\bin\Debug\FF(At the scene).exe.config
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\bin\Debug\FF(At the scene).exe
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\bin\Debug\FF(At the scene).pdb
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\bin\Debug\FF(Behind the Script).dll
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\bin\Debug\FF(Behind the Script).pdb
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\obj\Debug\FF(At the scene).csprojResolveAssemblyReference.cache
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\obj\Debug\FF_At_the_scene_.Properties.Resources.resources
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\obj\Debug\FF(At the scene).csproj.GenerateResource.Cache
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\obj\Debug\FF(At the scene).exe
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\obj\Debug\FF(At the scene).pdb
-c:\users\william.montero\documents\visual studio 2015\Projects\FF(Behind the Script)\FF(At the scene)\obj\Debug\ADGP_125.FF_Console.resources
-C:\Users\william.montero\Desktop\FF(Behind the Script)\FF(At the scene)\bin\Debug\FF(At the scene).exe.config
-C:\Users\william.montero\Desktop\FF(Behind the Script)\FF(At the scene)\obj\Debug\FF(At the scene).exe
-C:\Users\william.montero\Desktop\FF(Behind the Script)\FF(At the scene)\obj\Debug\FF(At the scene).pdb
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\bin\Debug\FF(At the scene).exe.config
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\obj\Debug\FF(At the scene).exe
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\obj\Debug\FF(At the scene).pdb
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\bin\Debug\FF(At the scene).exe
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\bin\Debug\FF(At the scene).pdb
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\bin\Debug\FF(Behind the Script).dll
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\bin\Debug\FF(Behind the Script).pdb
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\obj\Debug\FF(At the scene).csprojResolveAssemblyReference.cache
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\obj\Debug\FF_At_the_scene_.FF_Console.resources
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\obj\Debug\FF_At_the_scene_.Properties.Resources.resources
-C:\Users\william.montero\Desktop\FF(BehindTheScript)\FF(At the scene)\obj\Debug\FF(At the scene).csproj.GenerateResource.Cache
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(At the scene).exe.config
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).exe
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).pdb
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(At the scene).exe
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(At the scene).pdb
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(Behind the Script).dll
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(Behind the Script).pdb
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).csprojResolveAssemblyReference.cache
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.FF_Console.resources
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.Properties.Resources.resources
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).csproj.GenerateResource.Cache
-C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.Combot.resources
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(At the scene).exe.config
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(At the scene).exe
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(At the scene).pdb
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(Behind the Script).dll
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\bin\Debug\FF(Behind the Script).pdb
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.FF_Console.resources
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.Combot.resources
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF_At_the_scene_.Properties.Resources.resources
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).csproj.GenerateResource.Cache
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).exe
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).pdb
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\obj\Debug\FF(At the scene).csprojResolveAssemblyReference.cache

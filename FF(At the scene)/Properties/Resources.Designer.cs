@@ -73,9 +73,29 @@ namespace FF_At_the_scene_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Combat_Envierment {
+            get {
+                object obj = ResourceManager.GetObject("Combat_Envierment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap main_backGround {
             get {
                 object obj = ResourceManager.GetObject("main_backGround", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refia {
+            get {
+                object obj = ResourceManager.GetObject("Refia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

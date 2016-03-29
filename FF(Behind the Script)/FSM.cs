@@ -191,8 +191,7 @@ namespace ADGP_125
             }
 
         }
-        public T CurrentStat() { return _currentState; }
-
+        public T CurrentStat { get { return _currentState; } }
     }
 }       
             

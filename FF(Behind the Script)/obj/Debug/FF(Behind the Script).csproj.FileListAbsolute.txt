@@ -13,3 +13,8 @@ C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(Behind the Script)\bin\Debug\F
 C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).csprojResolveAssemblyReference.cache
 C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).dll
 C:\Users\monte_000\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).pdb
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).csprojResolveAssemblyReference.cache
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).dll
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).pdb
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\bin\Debug\FF(Behind the Script).dll
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\bin\Debug\FF(Behind the Script).pdb

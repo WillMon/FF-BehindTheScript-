@@ -28,46 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.txt_playerStats = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.btn_Quit = new System.Windows.Forms.Button();
+            this.pgb_Turn = new System.Windows.Forms.ProgressBar();
+            this.pic_Chr = new System.Windows.Forms.PictureBox();
+            this.timer_Player = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Quit
             // 
-            this.button1.Location = new System.Drawing.Point(93, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Quit.Location = new System.Drawing.Point(1696, 12);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(145, 44);
+            this.btn_Quit.TabIndex = 15;
+            this.btn_Quit.Text = "Retuen To Main";
+            this.btn_Quit.UseVisualStyleBackColor = true;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
-            // txt_playerStats
+            // pgb_Turn
             // 
-            this.txt_playerStats.Location = new System.Drawing.Point(50, 30);
-            this.txt_playerStats.Multiline = true;
-            this.txt_playerStats.Name = "txt_playerStats";
-            this.txt_playerStats.Size = new System.Drawing.Size(174, 144);
-            this.txt_playerStats.TabIndex = 1;
+            this.pgb_Turn.Location = new System.Drawing.Point(54, 987);
+            this.pgb_Turn.Name = "pgb_Turn";
+            this.pgb_Turn.Size = new System.Drawing.Size(369, 29);
+            this.pgb_Turn.TabIndex = 16;
+            // 
+            // pic_Chr
+            // 
+            this.pic_Chr.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Chr.Location = new System.Drawing.Point(75, 380);
+            this.pic_Chr.Name = "pic_Chr";
+            this.pic_Chr.Size = new System.Drawing.Size(316, 575);
+            this.pic_Chr.TabIndex = 17;
+            this.pic_Chr.TabStop = false;
+            this.pic_Chr.Click += new System.EventHandler(this.pic_Chr_Click);
+            // 
+            // timer_Player
+            // 
+            this.timer_Player.Enabled = true;
+            this.timer_Player.Interval = 10;
             // 
             // Combot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.txt_playerStats);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1935, 1081);
+            this.ControlBox = false;
+            this.Controls.Add(this.pic_Chr);
+            this.Controls.Add(this.pgb_Turn);
+            this.Controls.Add(this.btn_Quit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimizeBox = false;
             this.Name = "Combot";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Combot";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_playerStats;
+        private System.Windows.Forms.Button btn_Quit;
+        private System.Windows.Forms.ProgressBar pgb_Turn;
+        private System.Windows.Forms.PictureBox pic_Chr;
+        private System.Windows.Forms.Timer timer_Player;
     }
 }

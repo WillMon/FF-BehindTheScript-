@@ -30,21 +30,23 @@ namespace FF_At_the_scene_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FF_Console));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.btn_2 = new System.Windows.Forms.Button();
-            this.txt_Display = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_quit = new System.Windows.Forms.Button();
-            this.btn_1 = new System.Windows.Forms.Button();
-            this.pic_Chr = new System.Windows.Forms.PictureBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btn_sentinal = new System.Windows.Forms.Button();
             this.btn_mage = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.txt_chrInfoDisplay = new System.Windows.Forms.TextBox();
+            this.btn_Warrior = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txt_Introduction = new System.Windows.Forms.TextBox();
+            this.btn_Help = new System.Windows.Forms.Button();
+            this.btn_Load = new System.Windows.Forms.Button();
+            this.btn_HelpCloseIntro = new System.Windows.Forms.Button();
+            this.pic_Chr = new System.Windows.Forms.PictureBox();
+            this.btn_Return = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,68 +62,9 @@ namespace FF_At_the_scene_
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
-            // btn_2
-            // 
-            this.btn_2.Location = new System.Drawing.Point(196, 298);
-            this.btn_2.Name = "btn_2";
-            this.btn_2.Size = new System.Drawing.Size(158, 33);
-            this.btn_2.TabIndex = 6;
-            this.btn_2.Text = "button2";
-            this.btn_2.UseVisualStyleBackColor = true;
-            // 
-            // txt_Display
-            // 
-            this.txt_Display.Location = new System.Drawing.Point(168, 198);
-            this.txt_Display.Multiline = true;
-            this.txt_Display.Name = "txt_Display";
-            this.txt_Display.ReadOnly = true;
-            this.txt_Display.Size = new System.Drawing.Size(353, 84);
-            this.txt_Display.TabIndex = 8;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.btn_quit);
-            this.groupBox1.Controls.Add(this.btn_1);
-            this.groupBox1.Controls.Add(this.txt_Display);
-            this.groupBox1.Controls.Add(this.btn_2);
-            this.groupBox1.Location = new System.Drawing.Point(1111, 639);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(542, 347);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            // 
-            // btn_quit
-            // 
-            this.btn_quit.Location = new System.Drawing.Point(374, 298);
-            this.btn_quit.Name = "btn_quit";
-            this.btn_quit.Size = new System.Drawing.Size(147, 33);
-            this.btn_quit.TabIndex = 11;
-            this.btn_quit.Text = "Quit";
-            this.btn_quit.UseVisualStyleBackColor = true;
-            // 
-            // btn_1
-            // 
-            this.btn_1.Location = new System.Drawing.Point(16, 298);
-            this.btn_1.Name = "btn_1";
-            this.btn_1.Size = new System.Drawing.Size(157, 33);
-            this.btn_1.TabIndex = 10;
-            this.btn_1.Text = "button1";
-            this.btn_1.UseVisualStyleBackColor = true;
-            // 
-            // pic_Chr
-            // 
-            this.pic_Chr.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Chr.Location = new System.Drawing.Point(62, 168);
-            this.pic_Chr.Name = "pic_Chr";
-            this.pic_Chr.Size = new System.Drawing.Size(209, 488);
-            this.pic_Chr.TabIndex = 11;
-            this.pic_Chr.TabStop = false;
-            this.pic_Chr.Click += new System.EventHandler(this.pic_Chr_Click);
-            // 
             // btn_sentinal
             // 
-            this.btn_sentinal.Location = new System.Drawing.Point(318, 612);
+            this.btn_sentinal.Location = new System.Drawing.Point(334, 866);
             this.btn_sentinal.Name = "btn_sentinal";
             this.btn_sentinal.Size = new System.Drawing.Size(145, 44);
             this.btn_sentinal.TabIndex = 12;
@@ -131,7 +74,7 @@ namespace FF_At_the_scene_
             // 
             // btn_mage
             // 
-            this.btn_mage.Location = new System.Drawing.Point(318, 612);
+            this.btn_mage.Location = new System.Drawing.Point(334, 866);
             this.btn_mage.Name = "btn_mage";
             this.btn_mage.Size = new System.Drawing.Size(145, 44);
             this.btn_mage.TabIndex = 13;
@@ -139,47 +82,128 @@ namespace FF_At_the_scene_
             this.btn_mage.UseVisualStyleBackColor = true;
             this.btn_mage.Click += new System.EventHandler(this.btn_mage_Click);
             // 
-            // button1
+            // btn_Quit
             // 
-            this.button1.Location = new System.Drawing.Point(852, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 54);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Quit Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Quit.Location = new System.Drawing.Point(1488, 866);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(145, 44);
+            this.btn_Quit.TabIndex = 14;
+            this.btn_Quit.Text = "Quit Game";
+            this.btn_Quit.UseVisualStyleBackColor = true;
+            this.btn_Quit.Click += new System.EventHandler(this.Quit_Click);
             // 
             // txt_chrInfoDisplay
             // 
-            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(348, 463);
+            this.txt_chrInfoDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(349, 717);
             this.txt_chrInfoDisplay.Multiline = true;
             this.txt_chrInfoDisplay.Name = "txt_chrInfoDisplay";
+            this.txt_chrInfoDisplay.ReadOnly = true;
             this.txt_chrInfoDisplay.Size = new System.Drawing.Size(101, 130);
             this.txt_chrInfoDisplay.TabIndex = 16;
+            // 
+            // btn_Warrior
+            // 
+            this.btn_Warrior.Location = new System.Drawing.Point(334, 866);
+            this.btn_Warrior.Name = "btn_Warrior";
+            this.btn_Warrior.Size = new System.Drawing.Size(145, 44);
+            this.btn_Warrior.TabIndex = 17;
+            this.btn_Warrior.Text = "Warrior";
+            this.btn_Warrior.UseVisualStyleBackColor = true;
+            this.btn_Warrior.Click += new System.EventHandler(this.btn_Warrior_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txt_Introduction
+            // 
+            this.txt_Introduction.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Introduction.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Introduction.Location = new System.Drawing.Point(1149, 533);
+            this.txt_Introduction.Multiline = true;
+            this.txt_Introduction.Name = "txt_Introduction";
+            this.txt_Introduction.ReadOnly = true;
+            this.txt_Introduction.Size = new System.Drawing.Size(484, 154);
+            this.txt_Introduction.TabIndex = 18;
+            this.txt_Introduction.Text = resources.GetString("txt_Introduction.Text");
+            // 
+            // btn_Help
+            // 
+            this.btn_Help.Location = new System.Drawing.Point(1149, 866);
+            this.btn_Help.Name = "btn_Help";
+            this.btn_Help.Size = new System.Drawing.Size(145, 44);
+            this.btn_Help.TabIndex = 19;
+            this.btn_Help.Text = "Help";
+            this.btn_Help.UseVisualStyleBackColor = true;
+            this.btn_Help.Click += new System.EventHandler(this.btn_Help_Click);
+            // 
+            // btn_Load
+            // 
+            this.btn_Load.Location = new System.Drawing.Point(1322, 866);
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.Size = new System.Drawing.Size(145, 44);
+            this.btn_Load.TabIndex = 20;
+            this.btn_Load.Text = "Load Save";
+            this.btn_Load.UseVisualStyleBackColor = true;
+            // 
+            // btn_HelpCloseIntro
+            // 
+            this.btn_HelpCloseIntro.Location = new System.Drawing.Point(1149, 866);
+            this.btn_HelpCloseIntro.Name = "btn_HelpCloseIntro";
+            this.btn_HelpCloseIntro.Size = new System.Drawing.Size(145, 44);
+            this.btn_HelpCloseIntro.TabIndex = 21;
+            this.btn_HelpCloseIntro.Text = "Help";
+            this.btn_HelpCloseIntro.UseVisualStyleBackColor = true;
+            this.btn_HelpCloseIntro.Click += new System.EventHandler(this.btn_HelpCloseIntro_Click);
+            // 
+            // pic_Chr
+            // 
+            this.pic_Chr.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Chr.Location = new System.Drawing.Point(12, 335);
+            this.pic_Chr.Name = "pic_Chr";
+            this.pic_Chr.Size = new System.Drawing.Size(316, 575);
+            this.pic_Chr.TabIndex = 11;
+            this.pic_Chr.TabStop = false;
+            this.pic_Chr.Click += new System.EventHandler(this.pic_Chr_Click);
+            // 
+            // btn_Return
+            // 
+            this.btn_Return.Location = new System.Drawing.Point(1695, 12);
+            this.btn_Return.Name = "btn_Return";
+            this.btn_Return.Size = new System.Drawing.Size(145, 44);
+            this.btn_Return.TabIndex = 22;
+            this.btn_Return.Text = "Return To Game";
+            this.btn_Return.UseVisualStyleBackColor = true;
+            this.btn_Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // FF_Console
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.ClientSize = new System.Drawing.Size(2039, 1109);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Return);
+            this.Controls.Add(this.btn_HelpCloseIntro);
+            this.Controls.Add(this.btn_Load);
+            this.Controls.Add(this.btn_Help);
+            this.Controls.Add(this.txt_Introduction);
+            this.Controls.Add(this.btn_Warrior);
             this.Controls.Add(this.txt_chrInfoDisplay);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Quit);
             this.Controls.Add(this.btn_mage);
             this.Controls.Add(this.btn_sentinal);
             this.Controls.Add(this.pic_Chr);
-            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FF_Console";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FF_Console";
             this.Load += new System.EventHandler(this.FF_Console_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,18 +212,20 @@ namespace FF_At_the_scene_
 
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button btn_2;
-        private System.Windows.Forms.TextBox txt_Display;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pic_Chr;
-        private System.Windows.Forms.Button btn_1;
-        private System.Windows.Forms.Button btn_quit;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button btn_sentinal;
         private System.Windows.Forms.Button btn_mage;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Quit;
         private System.Windows.Forms.TextBox txt_chrInfoDisplay;
+        private System.Windows.Forms.Button btn_Warrior;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.TextBox txt_Introduction;
+        private System.Windows.Forms.Button btn_Help;
+        private System.Windows.Forms.Button btn_Load;
+        private System.Windows.Forms.Button btn_HelpCloseIntro;
+        public System.Windows.Forms.Button btn_Return;
     }
 }
 

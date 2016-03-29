@@ -102,9 +102,6 @@
     <None Include="Resources\Snow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Leon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bg_Screen.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +112,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\4ee81b4a_Final-Fantasy-XIII-2-Caius-Character-Artwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Combat Envierment.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
