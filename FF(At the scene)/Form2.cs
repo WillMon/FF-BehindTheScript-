@@ -38,9 +38,6 @@ namespace FF_At_the_scene_
 
             while(pgb_Turn.Value <= pgb_Turn.Maximum)
                 pgb_Turn.Value += timer_Player.Interval;
-
-            
-
             //_playerLevel.Level();
 
         }
@@ -48,7 +45,6 @@ namespace FF_At_the_scene_
  
         private void btn_Quit_Click(object sender, EventArgs e)
         {
-
             Close();
         }
 

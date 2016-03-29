@@ -33,8 +33,7 @@ namespace ADGP_125
             public int _staminaGap { get; set; }
             public double _exp { get; set; }
 
-            public Player()
-            { }
+            public Player()  { }
             public Player(string chrClass, string chrID, int health, int staminaCap, int dmg)
             {
                 _chrClass = chrClass;
