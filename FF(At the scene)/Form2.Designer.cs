@@ -35,10 +35,9 @@
             this.pic_ChrAtt = new System.Windows.Forms.PictureBox();
             this.txt_en = new System.Windows.Forms.TextBox();
             this.txt_pn = new System.Windows.Forms.TextBox();
-            this.pic_fb = new System.Windows.Forms.PictureBox();
+            this.txt_Turns = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_fb)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Quit
@@ -54,6 +53,7 @@
             // 
             // pgb_ph
             // 
+            this.pgb_ph.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.pgb_ph.Location = new System.Drawing.Point(62, 981);
             this.pgb_ph.Name = "pgb_ph";
             this.pgb_ph.Size = new System.Drawing.Size(430, 29);
@@ -62,6 +62,7 @@
             // 
             // pgb_eh
             // 
+            this.pgb_eh.BackColor = System.Drawing.Color.Yellow;
             this.pgb_eh.Location = new System.Drawing.Point(1451, 981);
             this.pgb_eh.Name = "pgb_eh";
             this.pgb_eh.Size = new System.Drawing.Size(430, 29);
@@ -81,7 +82,7 @@
             // pic_ChrAtt
             // 
             this.pic_ChrAtt.BackColor = System.Drawing.Color.Transparent;
-            this.pic_ChrAtt.Location = new System.Drawing.Point(87, 380);
+            this.pic_ChrAtt.Location = new System.Drawing.Point(95, 380);
             this.pic_ChrAtt.Name = "pic_ChrAtt";
             this.pic_ChrAtt.Size = new System.Drawing.Size(369, 575);
             this.pic_ChrAtt.TabIndex = 17;
@@ -91,39 +92,40 @@
             // txt_en
             // 
             this.txt_en.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_en.Location = new System.Drawing.Point(1519, 278);
+            this.txt_en.Location = new System.Drawing.Point(1569, 307);
             this.txt_en.Multiline = true;
             this.txt_en.Name = "txt_en";
             this.txt_en.ReadOnly = true;
-            this.txt_en.Size = new System.Drawing.Size(284, 71);
+            this.txt_en.Size = new System.Drawing.Size(211, 49);
             this.txt_en.TabIndex = 22;
             // 
             // txt_pn
             // 
             this.txt_pn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pn.Location = new System.Drawing.Point(120, 278);
+            this.txt_pn.Location = new System.Drawing.Point(152, 307);
             this.txt_pn.Multiline = true;
             this.txt_pn.Name = "txt_pn";
             this.txt_pn.ReadOnly = true;
-            this.txt_pn.Size = new System.Drawing.Size(284, 71);
+            this.txt_pn.Size = new System.Drawing.Size(211, 49);
             this.txt_pn.TabIndex = 23;
+            this.txt_pn.TextChanged += new System.EventHandler(this.txt_pn_TextChanged);
             // 
-            // pic_fb
+            // txt_Turns
             // 
-            this.pic_fb.Location = new System.Drawing.Point(1409, 514);
-            this.pic_fb.Name = "pic_fb";
-            this.pic_fb.Size = new System.Drawing.Size(500, 281);
-            this.pic_fb.TabIndex = 24;
-            this.pic_fb.TabStop = false;
-            this.pic_fb.Click += new System.EventHandler(this.pic_fb_Click);
+            this.txt_Turns.Location = new System.Drawing.Point(743, 307);
+            this.txt_Turns.Multiline = true;
+            this.txt_Turns.Name = "txt_Turns";
+            this.txt_Turns.Size = new System.Drawing.Size(378, 87);
+            this.txt_Turns.TabIndex = 24;
             // 
             // Combot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1968, 1104);
             this.ControlBox = false;
-            this.Controls.Add(this.pic_fb);
+            this.Controls.Add(this.txt_Turns);
             this.Controls.Add(this.txt_pn);
             this.Controls.Add(this.txt_en);
             this.Controls.Add(this.pgb_eh);
@@ -140,7 +142,6 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_fb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +155,6 @@
         private System.Windows.Forms.ProgressBar pgb_eh;
         private System.Windows.Forms.TextBox txt_en;
         private System.Windows.Forms.TextBox txt_pn;
-        private System.Windows.Forms.PictureBox pic_fb;
+        private System.Windows.Forms.TextBox txt_Turns;
     }
 }

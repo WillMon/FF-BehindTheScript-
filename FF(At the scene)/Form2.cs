@@ -16,8 +16,8 @@ namespace FF_At_the_scene_
     {
 
 
-        Characters.Enemy _ene_caius = new Characters.Enemy("Caius", 1000, 300, 30);
-        Characters.Enemy _ene_Kafka = new Characters.Enemy("Kafka",2000, 650, 50);
+        Characters.Enemy _ene_caius = new Characters.Enemy("Caius", 800, 300, 30);
+        Characters.Enemy _ene_Kafka = new Characters.Enemy("Kafka",1700, 650, 50);
         Characters.Enemy _ene_Shelke = new Characters.Enemy("Shelke", 3000, 1000, 70);
         Characters.Enemy _ene_Weiss = new Characters.Enemy("Weiss", 4000, 1250, 90);
         Characters.Enemy _ene_Lumina = new Characters.Enemy("Lumina", 6000, 2400, 120);
@@ -31,7 +31,8 @@ namespace FF_At_the_scene_
         Characters.Player p = new Characters.Player();
         DateTime _dt = new DateTime();
 
-        static bool pt = false;
+        bool pt =false;
+        int count = 0;
         static bool click = false;
 
         public Combot()
@@ -46,7 +47,7 @@ namespace FF_At_the_scene_
             ed.Add(Properties.Resources.Sephiroth1, _ene_Sephiroth);
             ed.Add(Properties.Resources.Mimic_death, _ene_Suprise);
 
-            
+           
 
 
             p = FF_Console._playersChoose; // Player Choosen by user
@@ -56,105 +57,91 @@ namespace FF_At_the_scene_
             LevelingSystem.Player _playerLevel = new LevelingSystem.Player(_ene_caius);
         }
 
-        public void pdg_PlayerHealth()
-        {
-            p = FF_Console._playersChoose;
-
-            pgb_ph.BackColor = Color.PaleGreen;
-            pgb_ph.Maximum = p._health;
-            pgb_ph.Value = p._health;
-        }
-        public void pdg_EnemyHealth()
-        {
-
-
-            pgb_eh.BackColor = Color.Yellow;
-            pgb_eh.Maximum = p._health;
-            pgb_eh.Value = _ce._health;
-        }
-
-
-        public void ASortmentOfEnemies() {
-            
-        }
-
+ 
         private void Form2_Load(object sender, EventArgs e)
         {
-            pic_fb.Visible = false;
+            
+            Random rn = new Random();
+            if (_ce._health <= 0)
+                ++count;
+            if (rn.Next(0, 20) == 10 || rn.Next(0, 20) == 19)
+                count = 10;
+
+        
+
 
             p = FF_Console._playersChoose;
+
+            
 
             this.BackgroundImage = Properties.Resources.Combat_Envierment;
             pic_ChrAtt.BackgroundImage = FF_Console._currentCharacter;
-
+          
 
             _ce = _ene_caius;
-           int count = 0;
+           
            
             switch (count)
             {
                 case 0: _ce = _ene_caius; pic_EneAtt.BackgroundImage = Properties.Resources.Caius;
-                    pic_fb.Visible = false;
-                    pic_EneAtt.Visible = true;
+
                     break;
                 case 1:
                     _ce = _ene_Kafka; pic_EneAtt.BackgroundImage = Properties.Resources.Kefka;
-                    pic_fb.Visible = false;
-                    pic_EneAtt.Visible = true;
+
                     break;
                 case 2:
                     _ce = _ene_Shelke; pic_EneAtt.BackgroundImage = Properties.Resources.Shelke;
-                    pic_fb.Visible = false;
-                    pic_EneAtt.Visible = true;
+   
                     break;
                 case 3:
                     _ce = _ene_Weiss; pic_EneAtt.BackgroundImage = Properties.Resources.Weiss;
-                    pic_fb.Visible = false;
-                    pic_EneAtt.Visible = true;
+  
                     break;
                 case 4:
                     _ce = _ene_Lumina; pic_EneAtt.BackgroundImage = Properties.Resources.Lumina;
-                    pic_fb.Visible = false;
-                    pic_EneAtt.Visible = true;
+   
                     break;
                 case 5:
-                    _ce = _ene_Sephiroth; pic_fb.Visible = true;
-                    pic_EneAtt.Visible = false;
-                    pic_fb.BackgroundImage = Properties.Resources.Sephiroth1;
+                    _ce = _ene_Sephiroth;  pic_EneAtt.BackgroundImage = Properties.Resources.Sephiroth1;
                     break;
                 case 10:
-                    _ce = _ene_Suprise; pic_fb.BackgroundImage = Properties.Resources.Mimic_death;
-                    _ce = _ene_Sephiroth; pic_fb.Visible = true;
-                    pic_EneAtt.Visible = false;
+                    _ce = _ene_Suprise; pic_EneAtt.BackgroundImage = Properties.Resources.Mimic_death;
+ 
                     break; 
             }
-            
-            if (_ce._health <= 0)
-                ++count;
+             
+              
 
             txt_pn.Text = p._chrID;
             txt_en.Text = _ce._chrID;
             
-            pdg_PlayerHealth();
-            pdg_EnemyHealth();
-
-            
            
+            pgb_ph.Maximum = p._health;
+            pgb_ph.Value = p._health;
 
-            // Turns off the pictureboss 
+            pgb_eh.Maximum = _ce._health;
+            pgb_eh.Value = _ce._health;
+
+
+
+            // Locks in whose turn it is 
             if (!pt)
-                pic_ChrAtt.Enabled = false;
+            { txt_Turns.Text = p._chrID + " Turn"; pic_ChrAtt.Enabled = true; pic_EneAtt.Enabled = false;  }
             else if (pt)
-                pic_EneAtt.Enabled = false;
-
+            { txt_Turns.Text = _ce._chrID + " Turn"; pic_EneAtt.Enabled = true; pic_ChrAtt.Enabled = false; pic_EneAtt_Click(this.pic_EneAtt, null); }
 
         }
 
 
-
-
         private void pic_ChrAtt_Click(object sender, EventArgs e)
         {
+            if (_ce._health >= 0)
+                
+            _ce._health -= p._dmg;
+            pgb_eh.Value = _ce._health;
+            pt = true;
+
 
         }
             
@@ -178,7 +165,9 @@ namespace FF_At_the_scene_
 
         private void pic_EneAtt_Click(object sender, EventArgs e)
         {
-
+            p._health -= _ce._dmg;
+            pgb_ph.Value = p._health;
+            pt = false;
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
@@ -191,7 +180,7 @@ namespace FF_At_the_scene_
 
         }
 
-        private void pic_fb_Click(object sender, EventArgs e)
+        private void txt_pn_TextChanged(object sender, EventArgs e)
         {
 
         }

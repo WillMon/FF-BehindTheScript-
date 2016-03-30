@@ -188,8 +188,8 @@ namespace FF_At_the_scene_
        
         private void Return_Click(object sender, EventArgs e)
         {
-
             _combot.Show();
+            
 
         }
 
