@@ -136,4 +136,31 @@
   <data name="Combat_Envierment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Combat Envierment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Kefka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kefka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lightning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lightning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mimic_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unedited\Mimic-death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sephiroth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sephiroth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sephiroth1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unedited\Sephiroth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shelke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shelke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Victor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unedited\Victor.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Weiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Weiss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="You_Died" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unedited\You Died.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

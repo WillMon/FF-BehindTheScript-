@@ -6,7 +6,7 @@ using ADGP_125;
 namespace FF_At_the_scene_
 {
 
-    enum gameFSM {Init, Start, Combot, IOsFile, End, }
+    public enum gameFSM {Init, Start, Combot, IOsFile, End, }
 
     public partial class FF_Console : Form
     {
@@ -38,7 +38,7 @@ namespace FF_At_the_scene_
         Combot _combot = new Combot();
         
 
-        FinistateStatMachine<gameFSM> _gameFSM = new FinistateStatMachine<gameFSM>(gameFSM.Init);
+        public static FinistateStatMachine<gameFSM> _gameFSM = new FinistateStatMachine<gameFSM>(gameFSM.Init);
         private void FF_Console_Load(object sender, EventArgs e)
         {
             pic_Chr.Enabled = false;
@@ -77,7 +77,7 @@ namespace FF_At_the_scene_
         {
             
            
-            Characters.Player _p_snow = new Characters.Player("Sentinal", "Snow", 1500, 200, 25);
+            Characters.Player _p_snow = new Characters.Player("Sentinal", "Snow", 1500,  25);
          
             _playersChoose = _p_snow;
             txt_chrInfoDisplay.Text = _p_snow.PlayerInfo();
@@ -108,7 +108,7 @@ namespace FF_At_the_scene_
         {
             
             
-            Characters.Player _p_rikku = new Characters.Player("Mage", "Rikku", 880, 100, 30);
+            Characters.Player _p_rikku = new Characters.Player("Mage", "Rikku", 880,  30);
            
             _playersChoose = _p_rikku;
              txt_chrInfoDisplay.Text = _p_rikku.PlayerInfo();
@@ -136,7 +136,7 @@ namespace FF_At_the_scene_
         {
           
            
-            Characters.Player _p_refia = new Characters.Player("Warrior", "Refia", 1200, 130, 45);
+            Characters.Player _p_refia = new Characters.Player("Warrior", "Refia", 1200, 45);
            
             _playersChoose = _p_refia;
             txt_chrInfoDisplay.Text = _p_refia.PlayerInfo();
@@ -152,7 +152,12 @@ namespace FF_At_the_scene_
             pic_Chr.Enabled = false;
 
             _btn_disabled.Enabled = false;
-           
+
+            btn_sentinal.Visible = false;
+            btn_mage.Visible = false;
+            btn_Warrior.Visible = false;
+
+            btn_Return.Visible = true;
 
             _combot.Show();
             _gameFSM.ChangeState(gameFSM.Combot);
@@ -177,7 +182,7 @@ namespace FF_At_the_scene_
 
         private void Quit_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
        
@@ -187,6 +192,7 @@ namespace FF_At_the_scene_
             _combot.Show();
 
         }
+
     }
 
 }

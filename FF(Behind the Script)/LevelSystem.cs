@@ -28,7 +28,7 @@ namespace ADGP_125
                 _level = 1;
                 _exp = 0;
                 _expGain = enemy._expDrop;
-                _expMaxCap = 1000;
+                _expMaxCap = 100000;
                 _expCap = 50;
             }
 

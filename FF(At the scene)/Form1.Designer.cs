@@ -31,36 +31,24 @@ namespace FF_At_the_scene_
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FF_Console));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btn_sentinal = new System.Windows.Forms.Button();
             this.btn_mage = new System.Windows.Forms.Button();
             this.btn_Quit = new System.Windows.Forms.Button();
             this.txt_chrInfoDisplay = new System.Windows.Forms.TextBox();
             this.btn_Warrior = new System.Windows.Forms.Button();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txt_Introduction = new System.Windows.Forms.TextBox();
             this.btn_Help = new System.Windows.Forms.Button();
             this.btn_Load = new System.Windows.Forms.Button();
             this.btn_HelpCloseIntro = new System.Windows.Forms.Button();
             this.pic_Chr = new System.Windows.Forms.PictureBox();
             this.btn_Return = new System.Windows.Forms.Button();
-            this.contextMenuStrip1.SuspendLayout();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 29);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // btn_sentinal
             // 
@@ -111,11 +99,6 @@ namespace FF_At_the_scene_
             this.btn_Warrior.Text = "Warrior";
             this.btn_Warrior.UseVisualStyleBackColor = true;
             this.btn_Warrior.Click += new System.EventHandler(this.btn_Warrior_Click);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
             // txt_Introduction
             // 
@@ -170,7 +153,7 @@ namespace FF_At_the_scene_
             // 
             // btn_Return
             // 
-            this.btn_Return.Location = new System.Drawing.Point(1695, 12);
+            this.btn_Return.Location = new System.Drawing.Point(334, 866);
             this.btn_Return.Name = "btn_Return";
             this.btn_Return.Size = new System.Drawing.Size(145, 44);
             this.btn_Return.TabIndex = 22;
@@ -178,12 +161,30 @@ namespace FF_At_the_scene_
             this.btn_Return.UseVisualStyleBackColor = true;
             this.btn_Return.Click += new System.EventHandler(this.Return_Click);
             // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 29);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+
+            // 
             // FF_Console
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2039, 1109);
+            this.ClientSize = new System.Drawing.Size(2039, 1104);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Return);
             this.Controls.Add(this.btn_HelpCloseIntro);
@@ -202,30 +203,30 @@ namespace FF_At_the_scene_
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FF_Console";
             this.Load += new System.EventHandler(this.FF_Console_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.PictureBox pic_Chr;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button btn_sentinal;
         private System.Windows.Forms.Button btn_mage;
         private System.Windows.Forms.Button btn_Quit;
         private System.Windows.Forms.TextBox txt_chrInfoDisplay;
         private System.Windows.Forms.Button btn_Warrior;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.TextBox txt_Introduction;
         private System.Windows.Forms.Button btn_Help;
         private System.Windows.Forms.Button btn_Load;
         private System.Windows.Forms.Button btn_HelpCloseIntro;
         public System.Windows.Forms.Button btn_Return;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
 

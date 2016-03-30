@@ -122,6 +122,33 @@
   <ItemGroup>
     <None Include="Resources\Combat Envierment.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kefka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sephiroth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shelke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Weiss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unedited\Mimic-death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unedited\Sephiroth.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unedited\Victor.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unedited\You Died.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

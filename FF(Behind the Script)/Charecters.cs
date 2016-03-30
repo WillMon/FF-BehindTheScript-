@@ -15,9 +15,9 @@ namespace ADGP_125
         {
             string _chrClass { get; set; }
             string _chrID { get; set; }
-            float _dmg { get; set; }
-            float _health { get; set; }
-            int _staminaGap { get; set; }
+            int _dmg { get; set; }
+            int _health { get; set; }
+
             double _exp { get; set; }
 
 
@@ -28,19 +28,19 @@ namespace ADGP_125
 
             public string _chrClass { get; set; }
             public string _chrID { get; set; }
-            public float _dmg { get; set; }
-            public float _health { get; set; }
-            public int _staminaGap { get; set; }
+            public int _dmg { get; set; }
+            public int _health { get; set; }
+
             public double _exp { get; set; }
 
             public Player()  { }
-            public Player(string chrClass, string chrID, int health, int staminaCap, int dmg)
+            public Player(string chrClass, string chrID, int health,  int dmg)
             {
                 _chrClass = chrClass;
                 _chrID = chrID;
                 _dmg = dmg;
                 _health = health;
-                _staminaGap = staminaCap;
+
                 _exp = 0;
 
 
@@ -62,17 +62,16 @@ namespace ADGP_125
 
             public string _chrClass { get; set; }
             public string _chrID { get; set; }
-            public float _dmg { get; set; }
-            public float _health { get; set; }
-            public int _staminaGap { get; set; }
+            public int _dmg { get; set; }
+            public int _health { get; set; }
+
             public double _exp { get; set; }
             public float _expDrop;
-            public Enemy(string chrID, int health, int stamina, float expDrop, int dmg)
+            public Enemy(string chrID, int health, float expDrop, int dmg)
             {
                 _chrID = chrID;
                 _dmg = dmg;
                 _health = health;
-                _staminaGap = stamina;
                 _exp = 0;
                 _expDrop = expDrop;
 
