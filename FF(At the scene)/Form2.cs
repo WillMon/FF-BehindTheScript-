@@ -31,7 +31,7 @@ namespace FF_At_the_scene_
         Characters.Player p = new Characters.Player();
         DateTime _dt = new DateTime();
 
-        bool pt =false;
+        bool playerTurn =false;
         int count = 0;
         static bool click = false;
 
@@ -60,10 +60,11 @@ namespace FF_At_the_scene_
  
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+            _ce = _ene_caius;
+
+
             Random rn = new Random();
-            if (_ce._health <= 0)
-                ++count;
+           
             if (rn.Next(0, 20) == 10 || rn.Next(0, 20) == 19)
                 count = 10;
 
@@ -78,7 +79,7 @@ namespace FF_At_the_scene_
             pic_ChrAtt.BackgroundImage = FF_Console._currentCharacter;
           
 
-            _ce = _ene_caius;
+            
            
            
             switch (count)
@@ -111,8 +112,8 @@ namespace FF_At_the_scene_
                     break; 
             }
              
-              
-
+               if (_ce._health <= 0)
+                ++count;
             txt_pn.Text = p._chrID;
             txt_en.Text = _ce._chrID;
             
@@ -126,21 +127,39 @@ namespace FF_At_the_scene_
 
 
             // Locks in whose turn it is 
-            if (!pt)
+            if (!playerTurn)
             { txt_Turns.Text = p._chrID + " Turn"; pic_ChrAtt.Enabled = true; pic_EneAtt.Enabled = false;  }
-            else if (pt)
+            else if (playerTurn)
             { txt_Turns.Text = _ce._chrID + " Turn"; pic_EneAtt.Enabled = true; pic_ChrAtt.Enabled = false; pic_EneAtt_Click(this.pic_EneAtt, null); }
 
         }
 
+   private void ResolveTurn(bool turn)
+     {
 
-        private void pic_ChrAtt_Click(object sender, EventArgs e)
+         // Locks in whose turn it is 
+         if (!playerTurn)
+         {
+             txt_Turns.Text = p._chrID + " Turn";
+             pic_ChrAtt.Enabled = true;
+             pic_EneAtt.Enabled = false;
+             return;
+         }
+         
+          txt_Turns.Text = _ce._chrID + " Turn";
+         pic_EneAtt.Enabled = true;
+         pic_ChrAtt.Enabled = false;
+         pic_EneAtt_Click(this.pic_EneAtt, null); 
+         playerTurn = !turn;
+     }
+
+private void pic_ChrAtt_Click(object sender, EventArgs e)
         {
             if (_ce._health >= 0)
                 
             _ce._health -= p._dmg;
             pgb_eh.Value = _ce._health;
-            pt = true;
+            playerTurn = true;
 
 
         }
@@ -167,7 +186,7 @@ namespace FF_At_the_scene_
         {
             p._health -= _ce._dmg;
             pgb_ph.Value = p._health;
-            pt = false;
+            playerTurn = false;
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
