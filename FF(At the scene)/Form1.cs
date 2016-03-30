@@ -80,7 +80,7 @@ namespace FF_At_the_scene_
             Characters.Player _p_snow = new Characters.Player("Sentinal", "Snow", 1500,  25);
          
             _playersChoose = _p_snow;
-            txt_chrInfoDisplay.Text = _p_snow.PlayerInfo();
+            txt_chrInfoDisplay.Text = _p_snow.PlayerInfo;
 
             btn_sentinalApp();
            
@@ -111,7 +111,7 @@ namespace FF_At_the_scene_
             Characters.Player _p_rikku = new Characters.Player("Mage", "Rikku", 880,  30);
            
             _playersChoose = _p_rikku;
-             txt_chrInfoDisplay.Text = _p_rikku.PlayerInfo();
+             txt_chrInfoDisplay.Text = _p_rikku.PlayerInfo;
             btn_mageApp();
 
             _gameFSM.ChangeState(gameFSM.Start);
@@ -139,7 +139,7 @@ namespace FF_At_the_scene_
             Characters.Player _p_refia = new Characters.Player("Warrior", "Refia", 1200, 45);
            
             _playersChoose = _p_refia;
-            txt_chrInfoDisplay.Text = _p_refia.PlayerInfo();
+            txt_chrInfoDisplay.Text = _p_refia.PlayerInfo;
 
             btn_warriorApp();
            

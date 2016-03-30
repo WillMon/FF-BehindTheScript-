@@ -30,18 +30,21 @@
         {
             this.btn_Quit = new System.Windows.Forms.Button();
             this.pgb_ph = new System.Windows.Forms.ProgressBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pgb_eh = new System.Windows.Forms.ProgressBar();
             this.pic_EneAtt = new System.Windows.Forms.PictureBox();
             this.pic_ChrAtt = new System.Windows.Forms.PictureBox();
+            this.txt_en = new System.Windows.Forms.TextBox();
+            this.txt_pn = new System.Windows.Forms.TextBox();
+            this.pic_fb = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_fb)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Quit
             // 
-            this.btn_Quit.Location = new System.Drawing.Point(1979, 12);
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.Location = new System.Drawing.Point(1634, 39);
             this.btn_Quit.Name = "btn_Quit";
             this.btn_Quit.Size = new System.Drawing.Size(169, 44);
             this.btn_Quit.TabIndex = 15;
@@ -57,32 +60,13 @@
             this.pgb_ph.TabIndex = 16;
             this.pgb_ph.Click += new System.EventHandler(this.pgb_Turn_Click);
             // 
-            // progressBar1
+            // pgb_eh
             // 
-            this.progressBar1.Location = new System.Drawing.Point(1451, 981);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(430, 29);
-            this.progressBar1.TabIndex = 19;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(127, 278);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(284, 71);
-            this.textBox1.TabIndex = 20;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(1522, 278);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(284, 71);
-            this.textBox2.TabIndex = 21;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.pgb_eh.Location = new System.Drawing.Point(1451, 981);
+            this.pgb_eh.Name = "pgb_eh";
+            this.pgb_eh.Size = new System.Drawing.Size(430, 29);
+            this.pgb_eh.TabIndex = 19;
+            this.pgb_eh.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // pic_EneAtt
             // 
@@ -104,15 +88,45 @@
             this.pic_ChrAtt.TabStop = false;
             this.pic_ChrAtt.Click += new System.EventHandler(this.pic_ChrAtt_Click);
             // 
+            // txt_en
+            // 
+            this.txt_en.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_en.Location = new System.Drawing.Point(1519, 278);
+            this.txt_en.Multiline = true;
+            this.txt_en.Name = "txt_en";
+            this.txt_en.ReadOnly = true;
+            this.txt_en.Size = new System.Drawing.Size(284, 71);
+            this.txt_en.TabIndex = 22;
+            // 
+            // txt_pn
+            // 
+            this.txt_pn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pn.Location = new System.Drawing.Point(120, 278);
+            this.txt_pn.Multiline = true;
+            this.txt_pn.Name = "txt_pn";
+            this.txt_pn.ReadOnly = true;
+            this.txt_pn.Size = new System.Drawing.Size(284, 71);
+            this.txt_pn.TabIndex = 23;
+            // 
+            // pic_fb
+            // 
+            this.pic_fb.Location = new System.Drawing.Point(1409, 514);
+            this.pic_fb.Name = "pic_fb";
+            this.pic_fb.Size = new System.Drawing.Size(500, 281);
+            this.pic_fb.TabIndex = 24;
+            this.pic_fb.TabStop = false;
+            this.pic_fb.Click += new System.EventHandler(this.pic_fb_Click);
+            // 
             // Combot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2039, 1104);
+            this.ClientSize = new System.Drawing.Size(1968, 1104);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.pic_fb);
+            this.Controls.Add(this.txt_pn);
+            this.Controls.Add(this.txt_en);
+            this.Controls.Add(this.pgb_eh);
             this.Controls.Add(this.pic_EneAtt);
             this.Controls.Add(this.pic_ChrAtt);
             this.Controls.Add(this.pgb_ph);
@@ -126,6 +140,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_fb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,8 +151,9 @@
         private System.Windows.Forms.ProgressBar pgb_ph;
         private System.Windows.Forms.PictureBox pic_ChrAtt;
         private System.Windows.Forms.PictureBox pic_EneAtt;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox textBox2;
-        protected internal System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ProgressBar pgb_eh;
+        private System.Windows.Forms.TextBox txt_en;
+        private System.Windows.Forms.TextBox txt_pn;
+        private System.Windows.Forms.PictureBox pic_fb;
     }
 }

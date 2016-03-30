@@ -34,7 +34,6 @@ namespace FF_At_the_scene_
             this.btn_sentinal = new System.Windows.Forms.Button();
             this.btn_mage = new System.Windows.Forms.Button();
             this.btn_Quit = new System.Windows.Forms.Button();
-            this.txt_chrInfoDisplay = new System.Windows.Forms.TextBox();
             this.btn_Warrior = new System.Windows.Forms.Button();
             this.txt_Introduction = new System.Windows.Forms.TextBox();
             this.btn_Help = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@ namespace FF_At_the_scene_
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txt_chrInfoDisplay = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -79,16 +79,6 @@ namespace FF_At_the_scene_
             this.btn_Quit.Text = "Quit Game";
             this.btn_Quit.UseVisualStyleBackColor = true;
             this.btn_Quit.Click += new System.EventHandler(this.Quit_Click);
-            // 
-            // txt_chrInfoDisplay
-            // 
-            this.txt_chrInfoDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(349, 717);
-            this.txt_chrInfoDisplay.Multiline = true;
-            this.txt_chrInfoDisplay.Name = "txt_chrInfoDisplay";
-            this.txt_chrInfoDisplay.ReadOnly = true;
-            this.txt_chrInfoDisplay.Size = new System.Drawing.Size(101, 130);
-            this.txt_chrInfoDisplay.TabIndex = 16;
             // 
             // btn_Warrior
             // 
@@ -177,7 +167,14 @@ namespace FF_At_the_scene_
             // 
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-
+            // 
+            // txt_chrInfoDisplay
+            // 
+            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(353, 699);
+            this.txt_chrInfoDisplay.Name = "txt_chrInfoDisplay";
+            this.txt_chrInfoDisplay.Size = new System.Drawing.Size(100, 146);
+            this.txt_chrInfoDisplay.TabIndex = 23;
+            this.txt_chrInfoDisplay.Text = "";
             // 
             // FF_Console
             // 
@@ -186,13 +183,13 @@ namespace FF_At_the_scene_
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(2039, 1104);
             this.ControlBox = false;
+            this.Controls.Add(this.txt_chrInfoDisplay);
             this.Controls.Add(this.btn_Return);
             this.Controls.Add(this.btn_HelpCloseIntro);
             this.Controls.Add(this.btn_Load);
             this.Controls.Add(this.btn_Help);
             this.Controls.Add(this.txt_Introduction);
             this.Controls.Add(this.btn_Warrior);
-            this.Controls.Add(this.txt_chrInfoDisplay);
             this.Controls.Add(this.btn_Quit);
             this.Controls.Add(this.btn_mage);
             this.Controls.Add(this.btn_sentinal);
@@ -216,7 +213,6 @@ namespace FF_At_the_scene_
         private System.Windows.Forms.Button btn_sentinal;
         private System.Windows.Forms.Button btn_mage;
         private System.Windows.Forms.Button btn_Quit;
-        private System.Windows.Forms.TextBox txt_chrInfoDisplay;
         private System.Windows.Forms.Button btn_Warrior;
         private System.Windows.Forms.TextBox txt_Introduction;
         private System.Windows.Forms.Button btn_Help;
@@ -227,6 +223,7 @@ namespace FF_At_the_scene_
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.RichTextBox txt_chrInfoDisplay;
     }
 }
 

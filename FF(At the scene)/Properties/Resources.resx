@@ -157,10 +157,13 @@
   <data name="Victor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Unedited\Victor.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Weiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Weiss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="You_Died" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Unedited\You Died.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lumina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lumina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Weiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Weiss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

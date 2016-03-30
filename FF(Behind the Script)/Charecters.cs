@@ -46,9 +46,12 @@ namespace ADGP_125
 
             }
 
-            public string PlayerInfo()
+            public string PlayerInfo
             {
-                return "Class: " + _chrClass + "\nName: " + _chrID + "\nHealth: " +_health;
+                get
+                {
+                    return "Class: " + _chrClass + "\nName: " + _chrID + "\nHealth: " + _health;
+                }
             }
             public void TakeDmg(Enemy playerStats)
             {
