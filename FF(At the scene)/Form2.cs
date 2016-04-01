@@ -16,19 +16,12 @@ namespace FF_At_the_scene_
     {
 
 
-        Characters.Enemy _ene_caius = new Characters.Enemy("Caius", 800, 300, 30);
-        Characters.Enemy _ene_Kafka = new Characters.Enemy("Kafka",1700, 650, 50);
-        Characters.Enemy _ene_Shelke = new Characters.Enemy("Shelke", 3000, 1000, 70);
-        Characters.Enemy _ene_Weiss = new Characters.Enemy("Weiss", 4000, 1250, 90);
-        Characters.Enemy _ene_Lumina = new Characters.Enemy("Lumina", 6000, 2400, 120);
-        Characters.Enemy _ene_Sephiroth = new Characters.Enemy("Sephiroth",8000, 3000, 160);
-        Characters.Enemy _ene_Suprise = new Characters.Enemy("Mimic", 100000, 1000000, 1000000000);
 
         Characters.Enemy _ce;
 
         Dictionary<Image, Characters.Enemy> ed = new Dictionary<Image, Characters.Enemy>();
 
-        Characters.Player p = new Characters.Player();
+        Characters.Unit p = new Characters.Unit();
         DateTime _dt = new DateTime();
 
         bool playerTurn =false;

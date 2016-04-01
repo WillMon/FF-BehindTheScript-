@@ -30,7 +30,7 @@ namespace FF_At_the_scene_
         }
 
 
-        public static Characters.Player _playersChoose;
+        public static Unit _playersChoose;
         public static Image _currentCharacter;
 
         Button _btn_disabled;
@@ -77,7 +77,7 @@ namespace FF_At_the_scene_
         {
             
            
-            Characters.Player _p_snow = new Characters.Player("Sentinal", "Snow", 1500,  25);
+            Characters.Unit _p_snow = new Characters.Unit("Sentinal", "Snow", 1500,  25);
          
             _playersChoose = _p_snow;
             txt_chrInfoDisplay.Text = _p_snow.PlayerInfo;
@@ -108,7 +108,7 @@ namespace FF_At_the_scene_
         {
             
             
-            Characters.Player _p_rikku = new Characters.Player("Mage", "Rikku", 880,  30);
+            Characters.Unit _p_rikku = new Characters.Unit("Mage", "Rikku", 880,  30);
            
             _playersChoose = _p_rikku;
              txt_chrInfoDisplay.Text = _p_rikku.PlayerInfo;
@@ -136,7 +136,7 @@ namespace FF_At_the_scene_
         {
           
            
-            Characters.Player _p_refia = new Characters.Player("Warrior", "Refia", 1200, 45);
+            Characters.Unit _p_refia = new Characters.Unit("Warrior", "Refia", 1200, 45);
            
             _playersChoose = _p_refia;
             txt_chrInfoDisplay.Text = _p_refia.PlayerInfo;

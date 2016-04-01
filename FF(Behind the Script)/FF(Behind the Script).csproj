@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Charecters.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="PlayChoose.cs" />
     <Compile Include="FSM.cs" />
     <Compile Include="LevelSystem.cs" />
     <Compile Include="MyMain.cs" />
