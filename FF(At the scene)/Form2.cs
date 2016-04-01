@@ -94,7 +94,7 @@ namespace FF_At_the_scene_
             pgb_eh.Maximum = _ce._health;
             pgb_eh.Value = _ce._health;
 
-            if (pgb_eh.Value <= 0)
+            if (pgb_eh.Value < 0)
             {
                 _ce._alive = false;
                 pic_EneAtt.BackgroundImage = epl[1 + count];
