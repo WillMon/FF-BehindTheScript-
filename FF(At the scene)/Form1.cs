@@ -29,7 +29,6 @@ namespace FF_At_the_scene_
             _gameFSM.AddTransiton(gameFSM.IOsFile, gameFSM.Combot);
         }
 
-
         public static Unit _playersChoose;
         public static Image _currentCharacter;
 
@@ -77,7 +76,7 @@ namespace FF_At_the_scene_
         {
             
            
-            Characters.Unit _p_snow = new Characters.Unit("Sentinal", "Snow", 1500,  25);
+           Unit _p_snow = new Unit("Sentinal", "Snow", 1500, 0, 250);
          
             _playersChoose = _p_snow;
             txt_chrInfoDisplay.Text = _p_snow.PlayerInfo;
@@ -108,7 +107,7 @@ namespace FF_At_the_scene_
         {
             
             
-            Characters.Unit _p_rikku = new Characters.Unit("Mage", "Rikku", 880,  30);
+           Unit _p_rikku = new Unit("Mage", "Rikku", 880,0, 30);
            
             _playersChoose = _p_rikku;
              txt_chrInfoDisplay.Text = _p_rikku.PlayerInfo;
@@ -136,7 +135,7 @@ namespace FF_At_the_scene_
         {
           
            
-            Characters.Unit _p_refia = new Characters.Unit("Warrior", "Refia", 1200, 45);
+            Unit _p_refia = new Unit("Warrior", "Refia", 1200,0, 45);
            
             _playersChoose = _p_refia;
             txt_chrInfoDisplay.Text = _p_refia.PlayerInfo;

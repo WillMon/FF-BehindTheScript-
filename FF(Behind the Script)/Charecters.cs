@@ -32,14 +32,14 @@ namespace ADGP_125
         public double _exp { get; set; }
 
         public Unit() { }
-        public Unit(string chrClass, string chrID, int health, int dmg)
+        public Unit(string chrClass, string chrID, int health, double exp, int dmg)
         {
             _chrClass = chrClass;
             _chrID = chrID;
             _dmg = dmg;
             _health = health;
-
-            _exp = 0;
+            _alive = true;
+            _exp = exp;
 
 
         }

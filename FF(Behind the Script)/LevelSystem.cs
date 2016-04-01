@@ -23,11 +23,11 @@ namespace ADGP_125
             /// Set the comstructer for the Player Leveling System 
             /// </summary>
             /// <param name="expGain"></param>
-            public Player(Characters.Enemy enemy)
+            public Player(Unit enemy)
             {
                 _level = 1;
                 _exp = 0;
-                _expGain = enemy._expDrop;
+                _expGain = enemy._exp;
                 _expMaxCap = 100000;
                 _expCap = 50;
             }
@@ -58,10 +58,10 @@ namespace ADGP_125
             public double _expDrop;
             double _scalling;
 
-            public Enemy(Characters.Enemy enemy)
+            public Enemy(Unit enemy)
             {
                 _lvlDef = 1;
-                _expDrop = enemy._expDrop;
+                _expDrop = enemy._exp;
                 _scalling = _lvlDef * (enemy._dmg * 1 / 5);
             }
 
