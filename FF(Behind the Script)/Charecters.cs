@@ -50,13 +50,17 @@ namespace ADGP_125
         }
         public void Level()
         {
+            // exp - expirenced gained from the enemy killed 
+            // _expCap - The max amount of expirence a player can have per level
             if (_exp >= _expCap)
             {
-                while(( _exp / _expCap) != 1)
+                _lvl += _exp / _expCap;
+                while (_exp >= _expCap)
                 {
-                    ++_lvl;
+                    _exp = _exp/_expCap;
+                    
                 }
-                _exp = ( _expCap - _exp) *-1;
+                _exp = ( _expCap - _exp);
                 _expCap += _lvl * (_expCap * 1 / 4);
                 
 
@@ -68,7 +72,7 @@ namespace ADGP_125
         {
             get
             {
-                return "Class: " + _chrClass + "\nName: " + _chrID + "\nHealth: " + _health;
+                return "Lvl: " + _lvl + "\nEXP: " + _exp + "\nEXPCAP: " + _expCap;
             }
         }
         public void TakeDmg(Unit p)

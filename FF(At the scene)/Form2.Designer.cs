@@ -68,7 +68,6 @@
             this.pgb_eh.Name = "pgb_eh";
             this.pgb_eh.Size = new System.Drawing.Size(430, 29);
             this.pgb_eh.TabIndex = 19;
-            this.pgb_eh.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // pic_EneAtt
             // 
@@ -136,10 +135,23 @@
             this.expBar.Name = "expBar";
             this.expBar.Size = new System.Drawing.Size(247, 29);
             this.expBar.TabIndex = 26;
-            this.expBar.Click += new System.EventHandler(this.epxBar_Click);
             // 
             // Combot
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(1968, 1104);
+            this.ControlBox = false;
+            this.Controls.Add(this.expBar);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txt_Turns);
+            this.Controls.Add(this.txt_pn);
+            this.Controls.Add(this.txt_en);
+            this.Controls.Add(this.pgb_eh);
+            this.Controls.Add(this.pic_EneAtt);
+            this.Controls.Add(this.pic_ChrAtt);
+            this.Controls.Add(this.pgb_ph);
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;

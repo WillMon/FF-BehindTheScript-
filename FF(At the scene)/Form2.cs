@@ -18,19 +18,16 @@ namespace FF_At_the_scene_
         // List of the Optional enemies
         List<Unit> _el = new List<Unit>();
         // Keeps tab of the current enemy
-        Unit _ce;
+        Unit currentEnemy;
         // Keeps tab on the currnet enemy image
-        Image _cep;
+        Image currentEnemyImage;
        // keeps tab of the current player 
-        Unit p = new Unit();
+        Unit Player = new Unit();
 
-        int currentPlayerExp = 0;
-
-
-
-
+        // Keeps tab on current turn 
         bool playerTurn = false;
-        int count = 0;
+        
+        int enemyCounter = 0;
 
         
 
@@ -40,9 +37,10 @@ namespace FF_At_the_scene_
 
         }
 
+        //Cresats a list for all the possible enemies in game
         public List<Unit> EnemyList()
         {
-            List<Unit> en = new List<Unit>();
+            List<Unit> Enemy = new List<Unit>();
 
             Unit _ene_caius = new Unit("Enemy", "Caius", 1000, 300, 30);
             Unit _ene_Kafka = new Unit("Enemy", "Kafka", 2000, 650, 50);
@@ -53,18 +51,19 @@ namespace FF_At_the_scene_
             Unit _ene_Suprise = new Unit("Suprise", "Mimic", 100000, 1000000, 1000000000);
 
 
-            en.Add(_ene_caius);
-            en.Add(_ene_Kafka);
-            en.Add(_ene_Shelke);
-            en.Add(_ene_Weiss);
-            en.Add(_ene_Lumina);
-            en.Add(_ene_Sephiroth);
-            en.Add(_ene_Suprise);
+            Enemy.Add(_ene_caius);
+            Enemy.Add(_ene_Kafka);
+            Enemy.Add(_ene_Shelke);
+            Enemy.Add(_ene_Weiss);
+            Enemy.Add(_ene_Lumina);
+            Enemy.Add(_ene_Sephiroth);
+            Enemy.Add(_ene_Suprise);
 
-            return en;
+            return Enemy;
 
         }
 
+        // creats a list for the enemy illustration 
         public List<Image> EnemyPic()
         {
             List<Image> ep = new List<Image>();
@@ -79,76 +78,92 @@ namespace FF_At_the_scene_
 
             return ep;
         }
+        //Temp variables for the (EnemyList, EnemyPic)
 
-        List<Unit> el;
-        List<Image> epl;
+        // el well holr 
+        List<Unit> enmeyList;
+        List<Image> enmeyImageList;
 
+        // Event runs at start of the Form
         private void Form2_Load(object sender, EventArgs e)
         {
-            //pgb_eh.Value = _ce._health;
-            //pgb_ph.Value = p._health;
 
-            p = FF_Console._playersChoose; // Player Choosen by user 
+            // Sets current palyer to to p
+            Player = FF_Console._playersChoose; // Player Choosen by user 
 
-            el = EnemyList();
-            epl = EnemyPic();
+            // Set Current list of all the enemies in game outside of the heap
+            enmeyList = EnemyList();
+            // Set Curret list of all the enemy illostration outside of the Heap
+            enmeyImageList = EnemyPic();
 
+            // set current enemy outside of the heap
+            currentEnemy = enmeyList[enemyCounter]; 
+            //  Set current enemey illostration outside of the Heap
+            currentEnemyImage = enmeyImageList[enemyCounter];
 
-            _ce = el[count];
-            _cep = epl[count];
+            // Sets Starting enemy ilosstration to the ENemy Picture box
+            pic_EneAtt.BackgroundImage = currentEnemyImage;
 
-            pic_EneAtt.BackgroundImage = _cep;
-
-            pgb_ph.Maximum = p._health;
-            pgb_ph.Value = p._health;
-            expBar.Maximum = p._expCap;
-            expBar.Value = p._exp;
-
-            pgb_eh.Maximum = _ce._health;
-            pgb_eh.Value = _ce._health;
-
-            this.BackgroundImage = Properties.Resources.Combat_Envierment;
             pic_ChrAtt.BackgroundImage = FF_Console._currentCharacter;
 
-            txt_Turns.Text = p._chrID + " Turn";
+            // Set Max value and the value that eill be decramented from on the Player side of the Health Bar 
+            pgb_ph.Maximum = Player._health; 
+            pgb_ph.Value = Player._health;
 
-            txt_pn.Text = p._chrID;
-            txt_en.Text = _ce._chrID;
+
+            // Set Max value and the value that eill be decramented from on the Enemy side of the Health Bar 
+            expBar.Maximum = Player._expCap;
+            expBar.Value = Player._exp;
+
+
+            // Set Max value and the value that eill be decramented from on the Player side of the Health Bar 
+            pgb_eh.Maximum = currentEnemy._health;
+            pgb_eh.Value = currentEnemy._health;
+
+            // Set the Forms Background illostration
+            this.BackgroundImage = Properties.Resources.Combat_Envierment;
+            
+            // Display turnd to user
+            txt_Turns.Text = Player._chrID + " Turn";
+
+            //Displays current player/Enemeys Name to the user
+            txt_pn.Text = Player._chrID;
+            txt_en.Text = currentEnemy._chrID;
 
 
             
         }
-
-        private void NextEnemy()
+        // Updates the next state of the game
+        private void gameUpdate()
         {
             Random rn = new Random();
 
             
 
-            if (_ce._health <= 0)
+            if (currentEnemy._health <= 0)
             {
-                _ce._alive = false;
-                p._exp += _ce._exp;
-                p.Level();
+                currentEnemy._alive = false;
+                Player._exp += currentEnemy._exp;
+                Player.Level();
 
-                expBar.Maximum = p._expCap;
-                expBar.Value = p._exp;
-                ++count;
+                expBar.Maximum = Player._expCap;
+                expBar.Value = Player._exp;
+                ++enemyCounter;
 
 
 
-                pgb_eh.Maximum = el[count]._health;
-                pgb_eh.Value = el[count]._health;
-                txt_en.Text = el[count]._chrID;
+                pgb_eh.Maximum = enmeyList[enemyCounter]._health;
+                pgb_eh.Value = enmeyList[enemyCounter]._health;
+                txt_en.Text = enmeyList[enemyCounter]._chrID;
 
 
                 if (pgb_eh.Value <= 0)
                 {
                     pgb_eh = new ProgressBar();
-                    pgb_eh.Maximum = _ce._health;
+                    pgb_eh.Maximum = currentEnemy._health;
                 }
-                _ce = el[count];
-                _cep = epl[count];
+                currentEnemy = enmeyList[enemyCounter];
+                currentEnemyImage = enmeyImageList[enemyCounter];
                 
                 //if (rn.Next(0, 20) == 10 || rn.Next(0, 20) == 19)
                 //    count = 10;
@@ -160,30 +175,50 @@ namespace FF_At_the_scene_
         {
             // Locks in whose turn it is 
             if (!playerTurn)
-            { txt_Turns.Text = p._chrID + " Turn"; pic_ChrAtt.Enabled = true; pic_EneAtt.Enabled = false; }
+            { txt_Turns.Text = Player._chrID + " Turn"; pic_ChrAtt.Enabled = true; pic_EneAtt.Enabled = false; }
             else if (playerTurn)
-            { txt_Turns.Text = _ce._chrID + " Turn";  pic_EneAtt_Click(this.pic_EneAtt, null); }
-            txt_Turns.Text += " " + count.ToString();
+            { txt_Turns.Text = currentEnemy._chrID + " Turn";  pic_EneAtt_Click(this.pic_EneAtt, null); }
+            txt_Turns.Text += " " + enemyCounter.ToString();
 
         }
  
 
         private void pic_ChrAtt_Click(object sender, EventArgs e)
         {
-            _ce._health -= p._dmg;
+            currentEnemy.TakeDmg(Player);
 
             
-            expBar.Maximum = p._expCap;
-            expBar.Value = p._exp;
+            expBar.Maximum = Player._expCap;
+            expBar.Value = Player._exp;
             
-            pgb_eh.Value = _ce._health;
+            pgb_eh.Value = currentEnemy._health;
 
             playerTurn = true;
             palyerTurn();
 
 
         }
+        // Updates the game on player click 
+        private void pic_EneAtt_Click(object sender, EventArgs e)
+        {
+            Player.TakeDmg(currentEnemy);
 
+            pgb_ph.Value = Player._health;
+
+            gameUpdate();
+            pic_EneAtt.BackgroundImage = currentEnemyImage;
+            playerTurn = false;
+
+
+            if(currentEnemy._health <= 0)
+                Player._exp += currentEnemy._exp;
+
+
+
+            txt_Turns.Text += Player.PlayerInfo;
+        }
+
+        // Transitions back to the Starting state
         private void btn_Return_To_Start_Click(object sender, EventArgs e)
         {
             FF_Console._gameFSM.ChangeState(gameFSM.Start);
@@ -195,29 +230,11 @@ namespace FF_At_the_scene_
             
         }
 
-        private void pic_EneAtt_Click(object sender, EventArgs e)
-        {
-            p._health -= _ce._dmg;
-            pgb_ph.Value = p._health;
-
-            NextEnemy();
-            pic_EneAtt.BackgroundImage = _cep;
-            playerTurn = false;
-
-
-            if(_ce._health <= 0)
-                p._exp += _ce._exp;
-
-
-
-            txt_Turns.Text += "" + p._exp.ToString();
+      
             
-        }
+        
 
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -235,9 +252,6 @@ namespace FF_At_the_scene_
   
         }
 
-        private void epxBar_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
