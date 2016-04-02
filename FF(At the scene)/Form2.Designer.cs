@@ -36,6 +36,7 @@
             this.txt_en = new System.Windows.Forms.TextBox();
             this.txt_pn = new System.Windows.Forms.TextBox();
             this.txt_Turns = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +119,16 @@
             this.txt_Turns.Size = new System.Drawing.Size(378, 87);
             this.txt_Turns.TabIndex = 24;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1634, 119);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 44);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Quit Game";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.CombatQuitButton_Click);
+            // 
             // Combot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -125,6 +136,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1968, 1104);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_Turns);
             this.Controls.Add(this.txt_pn);
             this.Controls.Add(this.txt_en);
@@ -156,5 +168,6 @@
         private System.Windows.Forms.TextBox txt_en;
         private System.Windows.Forms.TextBox txt_pn;
         private System.Windows.Forms.TextBox txt_Turns;
+        private System.Windows.Forms.Button button1;
     }
 }
