@@ -15,7 +15,8 @@ namespace ADGP_125
         int _dmg { get; set; }
         int _health { get; set; }
         bool _alive { get; set; }
-        double _exp { get; set; }
+        int _lvl { get; set; }
+        int  _exp { get; set; }
 
 
     }
@@ -27,21 +28,40 @@ namespace ADGP_125
         public string _chrID { get; set; }
         public int _dmg { get; set; }
         public int _health { get; set; }
+        public int _lvl { get; set; }
         public bool _alive { get; set; }
 
-        public double _exp { get; set; }
+        public int _exp { get; set; }
+        public int _expCap { get; set; }
 
         public Unit() { }
-        public Unit(string chrClass, string chrID, int health, double exp, int dmg)
+        public Unit(string chrClass, string chrID, int health, int  exp, int dmg)
         {
             _chrClass = chrClass;
             _chrID = chrID;
             _dmg = dmg;
             _health = health;
             _alive = true;
+            _lvl = 1;
             _exp = exp;
+            _expCap = 50;
 
 
+        }
+        public void Level()
+        {
+            if (_exp >= _expCap)
+            {
+                while(( _exp / _expCap) != 1)
+                {
+                    ++_lvl;
+                }
+                _exp = ( _expCap - _exp) *-1;
+                _expCap += _lvl * (_expCap * 1 / 4);
+                
+
+
+            }
         }
 
         public string PlayerInfo

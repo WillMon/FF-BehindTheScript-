@@ -37,6 +37,7 @@
             this.txt_pn = new System.Windows.Forms.TextBox();
             this.txt_Turns = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.expBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +56,10 @@
             // pgb_ph
             // 
             this.pgb_ph.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.pgb_ph.Location = new System.Drawing.Point(62, 981);
+            this.pgb_ph.Location = new System.Drawing.Point(63, 971);
             this.pgb_ph.Name = "pgb_ph";
             this.pgb_ph.Size = new System.Drawing.Size(430, 29);
             this.pgb_ph.TabIndex = 16;
-            this.pgb_ph.Click += new System.EventHandler(this.pgb_Turn_Click);
             // 
             // pgb_eh
             // 
@@ -103,7 +103,7 @@
             // txt_pn
             // 
             this.txt_pn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pn.Location = new System.Drawing.Point(152, 307);
+            this.txt_pn.Location = new System.Drawing.Point(171, 307);
             this.txt_pn.Multiline = true;
             this.txt_pn.Name = "txt_pn";
             this.txt_pn.ReadOnly = true;
@@ -129,6 +129,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.CombatQuitButton_Click);
             // 
+            // expBar
+            // 
+            this.expBar.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.expBar.Location = new System.Drawing.Point(149, 1006);
+            this.expBar.Name = "expBar";
+            this.expBar.Size = new System.Drawing.Size(247, 29);
+            this.expBar.TabIndex = 26;
+            this.expBar.Click += new System.EventHandler(this.epxBar_Click);
+            // 
             // Combot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -136,6 +145,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1968, 1104);
             this.ControlBox = false;
+            this.Controls.Add(this.expBar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_Turns);
             this.Controls.Add(this.txt_pn);
@@ -169,5 +179,6 @@
         private System.Windows.Forms.TextBox txt_pn;
         private System.Windows.Forms.TextBox txt_Turns;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ProgressBar expBar;
     }
 }

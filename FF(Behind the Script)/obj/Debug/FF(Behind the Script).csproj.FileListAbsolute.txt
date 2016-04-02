@@ -17,3 +17,4 @@ C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\bin\D
 C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\bin\Debug\FF(Behind the Script).pdb
 C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).dll
 C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).pdb
+C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(Behind the Script)\obj\Debug\FF(Behind the Script).csprojResolveAssemblyReference.cache
