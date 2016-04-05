@@ -84,6 +84,8 @@ namespace FF_At_the_scene_
         List<Unit> enmeyList;
         List<Image> enmeyImageList;
 
+        Form3 End;
+
         // Event runs at start of the Form
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -130,6 +132,8 @@ namespace FF_At_the_scene_
             txt_pn.Text = Player._chrID;
             txt_en.Text = currentEnemy._chrID;
 
+             End = new Form3();
+
 
             
         }
@@ -148,8 +152,10 @@ namespace FF_At_the_scene_
 
                 expBar.Maximum = Player._expCap;
                 expBar.Value = Player._exp;
+                if (rn.Next(0, 20) == 10 || rn.Next(0, 20) == 19)
+                    enemyCounter = 6;
+                else
                 ++enemyCounter;
-
 
 
                 pgb_eh.Maximum = enmeyList[enemyCounter]._health;
@@ -165,8 +171,7 @@ namespace FF_At_the_scene_
                 currentEnemy = enmeyList[enemyCounter];
                 currentEnemyImage = enmeyImageList[enemyCounter];
                 
-                //if (rn.Next(0, 20) == 10 || rn.Next(0, 20) == 19)
-                //    count = 10;
+               
             }
 
         }
@@ -181,7 +186,17 @@ namespace FF_At_the_scene_
             txt_Turns.Text += " " + enemyCounter.ToString();
 
         }
- 
+        
+        private void GameRest()
+        {
+            
+            Player = FF_Console._playersChoose;
+
+            enmeyList = EnemyList();
+
+            enemyCounter = 0;
+
+        }
 
         private void pic_ChrAtt_Click(object sender, EventArgs e)
         {
@@ -197,13 +212,35 @@ namespace FF_At_the_scene_
             palyerTurn();
 
 
+            if (Player._health <= 0 || enemyCounter == 6)
+            {
+
+                End.Show();
+
+                GameRest();
+
+                pic_ChrAtt.Enabled = false;
+                pic_EneAtt.Enabled = false;
+
+
+
+            }
+            pgb_ph.Value = Player._health;
+
+
         }
         // Updates the game on player click 
         private void pic_EneAtt_Click(object sender, EventArgs e)
         {
             Player.TakeDmg(currentEnemy);
 
-            pgb_ph.Value = Player._health;
+
+            if (Player._health <= 0)
+            {
+                End.Show();
+                
+            }
+            
 
             gameUpdate();
             pic_EneAtt.BackgroundImage = currentEnemyImage;
@@ -213,15 +250,18 @@ namespace FF_At_the_scene_
             if(currentEnemy._health <= 0)
                 Player._exp += currentEnemy._exp;
 
-
-
             txt_Turns.Text += Player.PlayerInfo;
+
+            pgb_ph.Value = Player._health;
+            
         }
 
         // Transitions back to the Starting state
         private void btn_Return_To_Start_Click(object sender, EventArgs e)
         {
+
             FF_Console._gameFSM.ChangeState(gameFSM.Start);
+
             this.Hide();
         }
 
@@ -230,11 +270,6 @@ namespace FF_At_the_scene_
             
         }
 
-      
-            
-        
-
-       
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -246,12 +281,26 @@ namespace FF_At_the_scene_
 
         }
 
-        private void CombatQuitButton_Click(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-           
-  
+          
+
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Player = new Unit();
+            GameRest();
+        }
+
+        private void btn_Load_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_SaveGame_Click(object sender, EventArgs e)
+        {
+            Utilities.SerializeXML<Unit>("PlayersChoose", Player, @"C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\SaveLoad\");
+        }
     }
 }

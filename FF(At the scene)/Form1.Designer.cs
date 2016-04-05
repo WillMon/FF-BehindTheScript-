@@ -52,42 +52,46 @@ namespace FF_At_the_scene_
             // 
             // btn_sentinal
             // 
-            this.btn_sentinal.Location = new System.Drawing.Point(334, 866);
+            this.btn_sentinal.BackColor = System.Drawing.Color.White;
+            this.btn_sentinal.Location = new System.Drawing.Point(344, 866);
             this.btn_sentinal.Name = "btn_sentinal";
             this.btn_sentinal.Size = new System.Drawing.Size(145, 44);
             this.btn_sentinal.TabIndex = 12;
             this.btn_sentinal.Text = "Sentinal";
-            this.btn_sentinal.UseVisualStyleBackColor = true;
+            this.btn_sentinal.UseVisualStyleBackColor = false;
             this.btn_sentinal.Click += new System.EventHandler(this.btn_sentinal_Click);
             // 
             // btn_mage
             // 
-            this.btn_mage.Location = new System.Drawing.Point(334, 866);
+            this.btn_mage.BackColor = System.Drawing.Color.White;
+            this.btn_mage.Location = new System.Drawing.Point(344, 866);
             this.btn_mage.Name = "btn_mage";
             this.btn_mage.Size = new System.Drawing.Size(145, 44);
             this.btn_mage.TabIndex = 13;
             this.btn_mage.Text = "Mage";
-            this.btn_mage.UseVisualStyleBackColor = true;
+            this.btn_mage.UseVisualStyleBackColor = false;
             this.btn_mage.Click += new System.EventHandler(this.btn_mage_Click);
             // 
             // btn_Quit
             // 
+            this.btn_Quit.BackColor = System.Drawing.Color.White;
             this.btn_Quit.Location = new System.Drawing.Point(1488, 866);
             this.btn_Quit.Name = "btn_Quit";
             this.btn_Quit.Size = new System.Drawing.Size(145, 44);
             this.btn_Quit.TabIndex = 14;
             this.btn_Quit.Text = "Quit Game";
-            this.btn_Quit.UseVisualStyleBackColor = true;
+            this.btn_Quit.UseVisualStyleBackColor = false;
             this.btn_Quit.Click += new System.EventHandler(this.Quit_Click);
             // 
             // btn_Warrior
             // 
-            this.btn_Warrior.Location = new System.Drawing.Point(334, 866);
+            this.btn_Warrior.BackColor = System.Drawing.Color.White;
+            this.btn_Warrior.Location = new System.Drawing.Point(344, 866);
             this.btn_Warrior.Name = "btn_Warrior";
             this.btn_Warrior.Size = new System.Drawing.Size(145, 44);
             this.btn_Warrior.TabIndex = 17;
             this.btn_Warrior.Text = "Warrior";
-            this.btn_Warrior.UseVisualStyleBackColor = true;
+            this.btn_Warrior.UseVisualStyleBackColor = false;
             this.btn_Warrior.Click += new System.EventHandler(this.btn_Warrior_Click);
             // 
             // txt_Introduction
@@ -104,31 +108,35 @@ namespace FF_At_the_scene_
             // 
             // btn_Help
             // 
+            this.btn_Help.BackColor = System.Drawing.Color.White;
             this.btn_Help.Location = new System.Drawing.Point(1149, 866);
             this.btn_Help.Name = "btn_Help";
             this.btn_Help.Size = new System.Drawing.Size(145, 44);
             this.btn_Help.TabIndex = 19;
             this.btn_Help.Text = "Help";
-            this.btn_Help.UseVisualStyleBackColor = true;
+            this.btn_Help.UseVisualStyleBackColor = false;
             this.btn_Help.Click += new System.EventHandler(this.btn_Help_Click);
             // 
             // btn_Load
             // 
+            this.btn_Load.BackColor = System.Drawing.Color.White;
             this.btn_Load.Location = new System.Drawing.Point(1322, 866);
             this.btn_Load.Name = "btn_Load";
             this.btn_Load.Size = new System.Drawing.Size(145, 44);
             this.btn_Load.TabIndex = 20;
             this.btn_Load.Text = "Load Save";
-            this.btn_Load.UseVisualStyleBackColor = true;
+            this.btn_Load.UseVisualStyleBackColor = false;
+            this.btn_Load.Click += new System.EventHandler(this.btn_Load_Click);
             // 
             // btn_HelpCloseIntro
             // 
+            this.btn_HelpCloseIntro.BackColor = System.Drawing.Color.White;
             this.btn_HelpCloseIntro.Location = new System.Drawing.Point(1149, 866);
             this.btn_HelpCloseIntro.Name = "btn_HelpCloseIntro";
             this.btn_HelpCloseIntro.Size = new System.Drawing.Size(145, 44);
             this.btn_HelpCloseIntro.TabIndex = 21;
             this.btn_HelpCloseIntro.Text = "Help";
-            this.btn_HelpCloseIntro.UseVisualStyleBackColor = true;
+            this.btn_HelpCloseIntro.UseVisualStyleBackColor = false;
             this.btn_HelpCloseIntro.Click += new System.EventHandler(this.btn_HelpCloseIntro_Click);
             // 
             // pic_Chr
@@ -143,12 +151,13 @@ namespace FF_At_the_scene_
             // 
             // btn_Return
             // 
-            this.btn_Return.Location = new System.Drawing.Point(334, 866);
+            this.btn_Return.BackColor = System.Drawing.Color.White;
+            this.btn_Return.Location = new System.Drawing.Point(344, 866);
             this.btn_Return.Name = "btn_Return";
             this.btn_Return.Size = new System.Drawing.Size(145, 44);
             this.btn_Return.TabIndex = 22;
             this.btn_Return.Text = "Return To Game";
-            this.btn_Return.UseVisualStyleBackColor = true;
+            this.btn_Return.UseVisualStyleBackColor = false;
             this.btn_Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // toolStripTextBox1
@@ -170,7 +179,7 @@ namespace FF_At_the_scene_
             // 
             // txt_chrInfoDisplay
             // 
-            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(353, 699);
+            this.txt_chrInfoDisplay.Location = new System.Drawing.Point(368, 714);
             this.txt_chrInfoDisplay.Name = "txt_chrInfoDisplay";
             this.txt_chrInfoDisplay.Size = new System.Drawing.Size(100, 146);
             this.txt_chrInfoDisplay.TabIndex = 23;
@@ -223,7 +232,7 @@ namespace FF_At_the_scene_
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.RichTextBox txt_chrInfoDisplay;
+        public System.Windows.Forms.RichTextBox txt_chrInfoDisplay;
     }
 }
 

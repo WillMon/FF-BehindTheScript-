@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Unit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_chrClass>Sentinal</_chrClass>
+  <_chrID>Snow</_chrID>
+  <_dmg>250</_dmg>
+  <_health>1330</_health>
+  <_lvl>7</_lvl>
+  <_alive>true</_alive>
+  <_exp>44</_exp>
+  <_expCap>134</_expCap>
+</Unit>

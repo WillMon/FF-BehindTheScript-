@@ -36,7 +36,7 @@
             this.txt_en = new System.Windows.Forms.TextBox();
             this.txt_pn = new System.Windows.Forms.TextBox();
             this.txt_Turns = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_SaveGame = new System.Windows.Forms.Button();
             this.expBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).BeginInit();
@@ -44,13 +44,14 @@
             // 
             // btn_Quit
             // 
+            this.btn_Quit.BackColor = System.Drawing.Color.White;
             this.btn_Quit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Quit.Location = new System.Drawing.Point(1634, 39);
             this.btn_Quit.Name = "btn_Quit";
             this.btn_Quit.Size = new System.Drawing.Size(169, 44);
             this.btn_Quit.TabIndex = 15;
             this.btn_Quit.Text = "Retuen To Main";
-            this.btn_Quit.UseVisualStyleBackColor = true;
+            this.btn_Quit.UseVisualStyleBackColor = false;
             this.btn_Quit.Click += new System.EventHandler(this.btn_Return_To_Start_Click);
             // 
             // pgb_ph
@@ -102,7 +103,7 @@
             // txt_pn
             // 
             this.txt_pn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pn.Location = new System.Drawing.Point(171, 307);
+            this.txt_pn.Location = new System.Drawing.Point(207, 307);
             this.txt_pn.Multiline = true;
             this.txt_pn.Name = "txt_pn";
             this.txt_pn.ReadOnly = true;
@@ -112,21 +113,22 @@
             // 
             // txt_Turns
             // 
-            this.txt_Turns.Location = new System.Drawing.Point(743, 307);
+            this.txt_Turns.Location = new System.Drawing.Point(810, 325);
             this.txt_Turns.Multiline = true;
             this.txt_Turns.Name = "txt_Turns";
             this.txt_Turns.Size = new System.Drawing.Size(378, 87);
             this.txt_Turns.TabIndex = 24;
             // 
-            // button1
+            // btn_SaveGame
             // 
-            this.button1.Location = new System.Drawing.Point(1634, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 44);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Quit Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.CombatQuitButton_Click);
+            this.btn_SaveGame.BackColor = System.Drawing.Color.White;
+            this.btn_SaveGame.Location = new System.Drawing.Point(1634, 119);
+            this.btn_SaveGame.Name = "btn_SaveGame";
+            this.btn_SaveGame.Size = new System.Drawing.Size(169, 44);
+            this.btn_SaveGame.TabIndex = 25;
+            this.btn_SaveGame.Text = "Save";
+            this.btn_SaveGame.UseVisualStyleBackColor = false;
+            this.btn_SaveGame.Click += new System.EventHandler(this.btn_SaveGame_Click);
             // 
             // expBar
             // 
@@ -144,21 +146,7 @@
             this.ClientSize = new System.Drawing.Size(1968, 1104);
             this.ControlBox = false;
             this.Controls.Add(this.expBar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txt_Turns);
-            this.Controls.Add(this.txt_pn);
-            this.Controls.Add(this.txt_en);
-            this.Controls.Add(this.pgb_eh);
-            this.Controls.Add(this.pic_EneAtt);
-            this.Controls.Add(this.pic_ChrAtt);
-            this.Controls.Add(this.pgb_ph);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1968, 1104);
-            this.ControlBox = false;
-            this.Controls.Add(this.expBar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_SaveGame);
             this.Controls.Add(this.txt_Turns);
             this.Controls.Add(this.txt_pn);
             this.Controls.Add(this.txt_en);
@@ -190,7 +178,7 @@
         private System.Windows.Forms.TextBox txt_en;
         private System.Windows.Forms.TextBox txt_pn;
         private System.Windows.Forms.TextBox txt_Turns;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_SaveGame;
         private System.Windows.Forms.ProgressBar expBar;
     }
 }

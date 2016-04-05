@@ -14,7 +14,7 @@ namespace FF_At_the_scene_
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FF_Console());
         }

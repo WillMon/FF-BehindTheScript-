@@ -35,7 +35,6 @@ namespace FF_At_the_scene_
         Button _btn_disabled;
 
         Combot _combot = new Combot();
-        
 
         public static FinistateStatMachine<gameFSM> _gameFSM = new FinistateStatMachine<gameFSM>(gameFSM.Init);
         private void FF_Console_Load(object sender, EventArgs e)
@@ -51,8 +50,7 @@ namespace FF_At_the_scene_
             btn_Return.Visible = false;
 
 
-
-
+            Utilities.SerializeXML<Unit>("PlayersChoose", _playersChoose, @"C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\SaveLoad\");
             _gameFSM.ChangeState(gameFSM.Start);
 
             BackgroundImage = Properties.Resources.main_backGround;
@@ -74,12 +72,11 @@ namespace FF_At_the_scene_
 
         private void btn_sentinal_Click(object sender, EventArgs e)
         {
-            
-           
-           Unit _p_snow = new Unit("Sentinal", "Snow", 1500, 0, 250);
+
+
+            _playersChoose = new Unit("Sentinal", "Snow", 1500, 0, 250);
          
-            _playersChoose = _p_snow;
-            txt_chrInfoDisplay.Text = _p_snow.PlayerInfo;
+            txt_chrInfoDisplay.Text = _playersChoose.PlayerInfo;
 
             btn_sentinalApp();
            
@@ -105,12 +102,11 @@ namespace FF_At_the_scene_
 
         private void btn_mage_Click(object sender, EventArgs e)
         {
-            
-            
-           Unit _p_rikku = new Unit("Mage", "Rikku", 880,0, 30);
+
+
+            _playersChoose = new Unit("Mage", "Rikku", 880,0, 30);
            
-            _playersChoose = _p_rikku;
-             txt_chrInfoDisplay.Text = _p_rikku.PlayerInfo;
+             txt_chrInfoDisplay.Text = _playersChoose.PlayerInfo;
             btn_mageApp();
 
             _gameFSM.ChangeState(gameFSM.Start);
@@ -133,12 +129,11 @@ namespace FF_At_the_scene_
 
         private void btn_Warrior_Click(object sender, EventArgs e)
         {
-          
+
+
+            _playersChoose = new Unit("Warrior", "Refia", 1200,0, 45);
            
-            Unit _p_refia = new Unit("Warrior", "Refia", 1200,0, 45);
-           
-            _playersChoose = _p_refia;
-            txt_chrInfoDisplay.Text = _p_refia.PlayerInfo;
+            txt_chrInfoDisplay.Text = _playersChoose.PlayerInfo;
 
             btn_warriorApp();
            
@@ -192,6 +187,12 @@ namespace FF_At_the_scene_
 
         }
 
+        private void btn_Load_Click(object sender, EventArgs e)
+        {
+           _playersChoose = Utilities.DeserializeXML<Unit>(@"C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\SaveLoad\PlayersChoose");
+        }
+
+        
     }
 
 }

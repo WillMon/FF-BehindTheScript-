@@ -72,7 +72,7 @@ namespace ADGP_125
         {
             get
             {
-                return "Lvl: " + _lvl + "\nEXP: " + _exp + "\nEXPCAP: " + _expCap;
+                return "Name: " + _chrID + "\nHealth: " + _health + "\nAttDmg: " + _dmg + "\nLevel:" + _lvl;
             }
         }
         public void TakeDmg(Unit p)
@@ -83,33 +83,32 @@ namespace ADGP_125
     }
 }
 
-        //public class Enemy : ICommonChrStat
-        //{
+//public class Enemy : ICommonChrStat
+//{
 
-        //    public string _chrClass { get; set; }
-        //    public string _chrID { get; set; }
-        //    public int _dmg { get; set; }
-        //    public int _health { get; set; }
+//    public string _chrClass { get; set; }
+//    public string _chrID { get; set; }
+//    public int _dmg { get; set; }
+//    public int _health { get; set; }
 
-        //    public double _exp { get; set; }
-        //    public float _expDrop;
-        //    public Enemy(string chrID, int health, float expDrop, int dmg)
-        //    {
-        //        _chrID = chrID;
-        //        _dmg = dmg;
-        //        _health = health;
-        //        _exp = 0;
-        //        _expDrop = expDrop;
+//    public double _exp { get; set; }
+//    public float _expDrop;
+//    public Enemy(string chrID, int health, float expDrop, int dmg)
+//    {
+//        _chrID = chrID;
+//        _dmg = dmg;
+//        _health = health;
+//        _exp = 0;
+//        _expDrop = expDrop;
 
 
-        //    }
+//    }
 
-        //    public void TakeDmg(Player player)
-        //    {
-        //        _health -= player._dmg;
-        //    }
+//    public void TakeDmg(Player player)
+//    {
+//        _health -= player._dmg;
+//    }
 
-        //}
-    
+//}
 
 
