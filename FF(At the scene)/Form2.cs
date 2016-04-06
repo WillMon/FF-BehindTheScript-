@@ -12,7 +12,7 @@ using ADGP_125;
 namespace FF_At_the_scene_
 {
 
-    public partial class Combot : Form
+    public partial class Combat : Form
     {
 
         // List of the Optional enemies
@@ -22,23 +22,23 @@ namespace FF_At_the_scene_
         // Keeps tab on the currnet enemy image
         Image currentEnemyImage;
        // keeps tab of the current player 
-        Unit Player = new Unit();
+
 
         // Keeps tab on current turn 
         bool playerTurn = false;
         
-        int enemyCounter = 0;
+        public static int enemyCounter = 0;
 
         
 
-        public Combot()
+        public Combat()
         {
             InitializeComponent();
 
         }
 
         //Cresats a list for all the possible enemies in game
-        public List<Unit> EnemyList()
+        public static  List<Unit> EnemyList()
         {
             List<Unit> Enemy = new List<Unit>();
 
@@ -64,7 +64,7 @@ namespace FF_At_the_scene_
         }
 
         // creats a list for the enemy illustration 
-        public List<Image> EnemyPic()
+        public static List<Image> EnemyPic()
         {
             List<Image> ep = new List<Image>();
 
@@ -81,8 +81,8 @@ namespace FF_At_the_scene_
         //Temp variables for the (EnemyList, EnemyPic)
 
         // el well holr 
-        List<Unit> enmeyList;
-        List<Image> enmeyImageList;
+        public static List<Unit> enemeyList;
+        public static List<Image> enemeyImageList;
 
         Form3 End;
 
@@ -91,45 +91,44 @@ namespace FF_At_the_scene_
         {
 
             // Sets current palyer to to p
-            Player = FF_Console._playersChoose; // Player Choosen by user 
 
             // Set Current list of all the enemies in game outside of the heap
-            enmeyList = EnemyList();
+            enemeyList = EnemyList();
             // Set Curret list of all the enemy illostration outside of the Heap
-            enmeyImageList = EnemyPic();
+            enemeyImageList = EnemyPic();
 
             // set current enemy outside of the heap
-            currentEnemy = enmeyList[enemyCounter]; 
+            currentEnemy = enemeyList[enemyCounter]; 
             //  Set current enemey illostration outside of the Heap
-            currentEnemyImage = enmeyImageList[enemyCounter];
+            currentEnemyImage = enemeyImageList[enemyCounter];
 
             // Sets Starting enemy ilosstration to the ENemy Picture box
-            pic_EneAtt.BackgroundImage = currentEnemyImage;
+            pic_EnemyAttack.BackgroundImage = currentEnemyImage;
 
-            pic_ChrAtt.BackgroundImage = FF_Console._currentCharacter;
+            pic_PlayerAttack.BackgroundImage = FF_Console._currentCharacter;
 
             // Set Max value and the value that eill be decramented from on the Player side of the Health Bar 
-            pgb_ph.Maximum = Player._health; 
-            pgb_ph.Value = Player._health;
+            pgb_playerHealth.Maximum = FF_Console._playersChoose._health; 
+            pgb_playerHealth.Value = FF_Console._playersChoose._health;
 
 
             // Set Max value and the value that eill be decramented from on the Enemy side of the Health Bar 
-            expBar.Maximum = Player._expCap;
-            expBar.Value = Player._exp;
+            expBar.Maximum = FF_Console._playersChoose._expCap;
+            expBar.Value = FF_Console._playersChoose._exp;
 
 
             // Set Max value and the value that eill be decramented from on the Player side of the Health Bar 
-            pgb_eh.Maximum = currentEnemy._health;
-            pgb_eh.Value = currentEnemy._health;
+            pgb_EnemyHealth.Maximum = currentEnemy._health;
+            pgb_EnemyHealth.Value = currentEnemy._health;
 
             // Set the Forms Background illostration
             this.BackgroundImage = Properties.Resources.Combat_Envierment;
             
             // Display turnd to user
-            txt_Turns.Text = Player._chrID + " Turn";
+            txt_Turns.Text = FF_Console._playersChoose._chrID + " Turn";
 
             //Displays current player/Enemeys Name to the user
-            txt_pn.Text = Player._chrID;
+            txt_pn.Text = FF_Console._playersChoose._chrID;
             txt_en.Text = currentEnemy._chrID;
 
              End = new Form3();
@@ -147,29 +146,29 @@ namespace FF_At_the_scene_
             if (currentEnemy._health <= 0)
             {
                 currentEnemy._alive = false;
-                Player._exp += currentEnemy._exp;
-                Player.Level();
+                FF_Console._playersChoose._exp += currentEnemy._exp;
+                FF_Console._playersChoose.Level();
 
-                expBar.Maximum = Player._expCap;
-                expBar.Value = Player._exp;
+                expBar.Maximum = FF_Console._playersChoose._expCap;
+                expBar.Value = FF_Console._playersChoose._exp;
                 if (rn.Next(0, 20) == 10 || rn.Next(0, 20) == 19)
                     enemyCounter = 6;
                 else
                 ++enemyCounter;
 
 
-                pgb_eh.Maximum = enmeyList[enemyCounter]._health;
-                pgb_eh.Value = enmeyList[enemyCounter]._health;
-                txt_en.Text = enmeyList[enemyCounter]._chrID;
+                pgb_EnemyHealth.Maximum = enemeyList[enemyCounter]._health;
+                pgb_EnemyHealth.Value = enemeyList[enemyCounter]._health;
+                txt_en.Text = enemeyList[enemyCounter]._chrID;
 
 
-                if (pgb_eh.Value <= 0)
+                if (pgb_EnemyHealth.Value <= 0)
                 {
-                    pgb_eh = new ProgressBar();
-                    pgb_eh.Maximum = currentEnemy._health;
+                    pgb_EnemyHealth = new ProgressBar();
+                    pgb_EnemyHealth.Maximum = currentEnemy._health;
                 }
-                currentEnemy = enmeyList[enemyCounter];
-                currentEnemyImage = enmeyImageList[enemyCounter];
+                currentEnemy = enemeyList[enemyCounter];
+                currentEnemyImage = enemeyImageList[enemyCounter];
                 
                
             }
@@ -180,79 +179,80 @@ namespace FF_At_the_scene_
         {
             // Locks in whose turn it is 
             if (!playerTurn)
-            { txt_Turns.Text = Player._chrID + " Turn"; pic_ChrAtt.Enabled = true; pic_EneAtt.Enabled = false; }
+            { txt_Turns.Text = FF_Console._playersChoose._chrID + " Turn"; pic_PlayerAttack.Enabled = true; pic_EnemyAttack.Enabled = false; }
             else if (playerTurn)
-            { txt_Turns.Text = currentEnemy._chrID + " Turn";  pic_EneAtt_Click(this.pic_EneAtt, null); }
-            txt_Turns.Text += " " + enemyCounter.ToString();
+            { txt_Turns.Text = currentEnemy._chrID + " Turn";  pic_EnemyAttack_Click(this.pic_EnemyAttack, null); }
+            
 
         }
         
-        private void GameRest()
+        public static void GameRest()
         {
-            
-            Player = FF_Console._playersChoose;
-
-            enmeyList = EnemyList();
+            FF_Console._playersChoose = new Unit();
+            enemeyImageList = EnemyPic();
+            enemeyList = EnemyList();
 
             enemyCounter = 0;
 
         }
 
-        private void pic_ChrAtt_Click(object sender, EventArgs e)
+        private void pic_PlayerAttack_Click(object sender, EventArgs e)
         {
-            currentEnemy.TakeDmg(Player);
+            currentEnemy.TakeDmg(FF_Console._playersChoose);
 
             
-            expBar.Maximum = Player._expCap;
-            expBar.Value = Player._exp;
+            expBar.Maximum = FF_Console._playersChoose._expCap;
+            expBar.Value = FF_Console._playersChoose._exp;
             
-            pgb_eh.Value = currentEnemy._health;
+            pgb_EnemyHealth.Value = currentEnemy._health;
 
             playerTurn = true;
             palyerTurn();
 
 
-            if (Player._health <= 0 || enemyCounter == 6)
+            if (FF_Console._playersChoose._health <= 0 || enemyCounter == 6)
             {
 
                 End.Show();
 
                 GameRest();
 
-                pic_ChrAtt.Enabled = false;
-                pic_EneAtt.Enabled = false;
-
-
+                pic_PlayerAttack.Enabled = false;
+                pic_EnemyAttack.Enabled = false;
 
             }
-            pgb_ph.Value = Player._health;
+            pgb_playerHealth.Value = FF_Console._playersChoose._health;
 
 
         }
         // Updates the game on player click 
-        private void pic_EneAtt_Click(object sender, EventArgs e)
+        private void pic_EnemyAttack_Click(object sender, EventArgs e)
         {
-            Player.TakeDmg(currentEnemy);
+            FF_Console._playersChoose.TakeDmg(currentEnemy);
 
 
-            if (Player._health <= 0)
+            if (FF_Console._playersChoose._health <= 0)
             {
                 End.Show();
-                
+                GameRest();
             }
             
 
             gameUpdate();
-            pic_EneAtt.BackgroundImage = currentEnemyImage;
+            pic_EnemyAttack.BackgroundImage = currentEnemyImage;
             playerTurn = false;
 
 
-            if(currentEnemy._health <= 0)
-                Player._exp += currentEnemy._exp;
+            if (currentEnemy._health <= 0)
+            {
+                pic_PlayerAttack.Enabled = false;
+                pic_EnemyAttack.Enabled = false;
+                FF_Console._playersChoose._exp += currentEnemy._exp;
+                pgb_playerHealth.Value = 0;
 
-            txt_Turns.Text += Player.PlayerInfo;
-
-            pgb_ph.Value = Player._health;
+            }
+            else
+            pgb_playerHealth.Value = FF_Console._playersChoose._health;
             
         }
 
@@ -265,42 +265,10 @@ namespace FF_At_the_scene_
             this.Hide();
         }
 
-        public void DeltaTime()
-        {
-            
-        }
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_pn_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-          
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Player = new Unit();
-            GameRest();
-        }
-
-        private void btn_Load_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void btn_SaveGame_Click(object sender, EventArgs e)
         {
-            Utilities.SerializeXML<Unit>("PlayersChoose", Player, @"C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\SaveLoad\");
+            Utilities.SerializeXML<Unit>("PlayersChoose", FF_Console._playersChoose, @"C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\SaveLoad\");
         }
     }
 }

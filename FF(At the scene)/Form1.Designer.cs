@@ -46,6 +46,7 @@ namespace FF_At_the_scene_
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txt_chrInfoDisplay = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Chr)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +103,7 @@ namespace FF_At_the_scene_
             this.txt_Introduction.Multiline = true;
             this.txt_Introduction.Name = "txt_Introduction";
             this.txt_Introduction.ReadOnly = true;
-            this.txt_Introduction.Size = new System.Drawing.Size(484, 154);
+            this.txt_Introduction.Size = new System.Drawing.Size(484, 212);
             this.txt_Introduction.TabIndex = 18;
             this.txt_Introduction.Text = resources.GetString("txt_Introduction.Text");
             // 
@@ -147,7 +148,7 @@ namespace FF_At_the_scene_
             this.pic_Chr.Size = new System.Drawing.Size(316, 575);
             this.pic_Chr.TabIndex = 11;
             this.pic_Chr.TabStop = false;
-            this.pic_Chr.Click += new System.EventHandler(this.pic_Chr_Click);
+            this.pic_Chr.Click += new System.EventHandler(this.pic_Player_Click);
             // 
             // btn_Return
             // 
@@ -185,6 +186,17 @@ namespace FF_At_the_scene_
             this.txt_chrInfoDisplay.TabIndex = 23;
             this.txt_chrInfoDisplay.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(334, 533);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Click on player when ready";
+            // 
             // FF_Console
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +204,7 @@ namespace FF_At_the_scene_
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(2039, 1104);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_chrInfoDisplay);
             this.Controls.Add(this.btn_Return);
             this.Controls.Add(this.btn_HelpCloseIntro);
@@ -233,6 +246,7 @@ namespace FF_At_the_scene_
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         public System.Windows.Forms.RichTextBox txt_chrInfoDisplay;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -10,6 +10,7 @@ namespace FF_At_the_scene_
 
     public partial class FF_Console : Form
     {
+        //set Console set the FiniteStateMachine at the start of the game 
         public FF_Console()
         {
 
@@ -28,14 +29,15 @@ namespace FF_At_the_scene_
             _gameFSM.AddTransiton(gameFSM.Combot, gameFSM.End);
             _gameFSM.AddTransiton(gameFSM.IOsFile, gameFSM.Combot);
         }
-
+        // Player choosen by user
         public static Unit _playersChoose;
+        // Current player Imgae on Display
         public static Image _currentCharacter;
-
+        // Ketp tabs on the buttons br used in the player
         Button _btn_disabled;
-
-        Combot _combot = new Combot();
-
+        // refuers to the combat form
+        Combat _combat = new Combat();
+        // creats a nnew object 
         public static FinistateStatMachine<gameFSM> _gameFSM = new FinistateStatMachine<gameFSM>(gameFSM.Init);
         private void FF_Console_Load(object sender, EventArgs e)
         {
@@ -59,7 +61,8 @@ namespace FF_At_the_scene_
         /// <summary>
         ///
         /// </summary>
-        public void btn_sentinalApp()
+       //What makes up a Sentinel
+        public void btn_sentinelApp()
         {
             _btn_disabled = btn_sentinal;
             _currentCharacter = Properties.Resources.Snow;
@@ -69,7 +72,7 @@ namespace FF_At_the_scene_
             btn_mage.Visible = true;
             btn_Warrior.Visible = false;
         }
-
+        // Places the information for what a sentinel in game
         private void btn_sentinal_Click(object sender, EventArgs e)
         {
 
@@ -78,14 +81,15 @@ namespace FF_At_the_scene_
          
             txt_chrInfoDisplay.Text = _playersChoose.PlayerInfo;
 
-            btn_sentinalApp();
+            btn_sentinelApp();
            
             _gameFSM.ChangeState(gameFSM.Start);
-           
+
 
 
 
         }
+        //What makes up a Mage
         public void btn_mageApp()
         {
             _btn_disabled = btn_mage;
@@ -99,12 +103,12 @@ namespace FF_At_the_scene_
             btn_sentinal.Visible = false;
 
         }
-
+        // Places the information for what a Mage in game
         private void btn_mage_Click(object sender, EventArgs e)
         {
 
 
-            _playersChoose = new Unit("Mage", "Rikku", 880,0, 30);
+            _playersChoose = new Unit("Mage", "Rikku", 880,0, 435);
            
              txt_chrInfoDisplay.Text = _playersChoose.PlayerInfo;
             btn_mageApp();
@@ -112,7 +116,7 @@ namespace FF_At_the_scene_
             _gameFSM.ChangeState(gameFSM.Start);
            
         }
-
+        //What makes up a Warrior 
         public void btn_warriorApp()
         {
             _btn_disabled = btn_Warrior;
@@ -126,12 +130,12 @@ namespace FF_At_the_scene_
             btn_Warrior.Visible = false;
 
         }
-
+        // Places the information for what a Warrior in game
         private void btn_Warrior_Click(object sender, EventArgs e)
         {
 
 
-            _playersChoose = new Unit("Warrior", "Refia", 1200,0, 45);
+            _playersChoose = new Unit("Warrior", "Refia", 1200,0, 305);
            
             txt_chrInfoDisplay.Text = _playersChoose.PlayerInfo;
 
@@ -140,8 +144,12 @@ namespace FF_At_the_scene_
             _gameFSM.ChangeState(gameFSM.Start);
           
         }
-
-        private void pic_Chr_Click(object sender, EventArgs e)
+        /// <summary>
+        ///  Disables all posibale out comes when the Picture box has been clicked 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pic_Player_Click(object sender, EventArgs e)
         {
             pic_Chr.Enabled = false;
 
@@ -153,7 +161,7 @@ namespace FF_At_the_scene_
 
             btn_Return.Visible = true;
 
-            _combot.Show();
+            _combat.Show();
             _gameFSM.ChangeState(gameFSM.Combot);
 
         }
@@ -166,23 +174,23 @@ namespace FF_At_the_scene_
             btn_HelpCloseIntro.Visible = true;
 
         }
-
+        // Displayes to the user how to play the game
         private void btn_HelpCloseIntro_Click(object sender, EventArgs e)
         {
             txt_Introduction.Visible = false;
             btn_HelpCloseIntro.Visible = false;
             btn_Help.Visible = true;
         }
-
+        // Closes the game
         private void Quit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-       
+       // Returns back to the combot From
         private void Return_Click(object sender, EventArgs e)
         {
-            _combot.Show();
+            _combat.Show();
             
 
         }
@@ -190,6 +198,7 @@ namespace FF_At_the_scene_
         private void btn_Load_Click(object sender, EventArgs e)
         {
            _playersChoose = Utilities.DeserializeXML<Unit>(@"C:\Users\william.montero\Desktop\FF-BehindTheScript-\FF(At the scene)\SaveLoad\PlayersChoose");
+
         }
 
         

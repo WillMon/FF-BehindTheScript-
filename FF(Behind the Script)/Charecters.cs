@@ -62,7 +62,9 @@ namespace ADGP_125
                 }
                 _exp = ( _expCap - _exp);
                 _expCap += _lvl * (_expCap * 1 / 4);
-                
+                _dmg += _lvl * (_dmg * 1 / 4);
+                _health += _lvl * (_health * 1 / 2);
+
 
 
             }

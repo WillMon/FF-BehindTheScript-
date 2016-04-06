@@ -1,6 +1,6 @@
 ﻿namespace FF_At_the_scene_
 {
-    partial class Combot
+    partial class Combat
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.btn_Quit = new System.Windows.Forms.Button();
-            this.pgb_ph = new System.Windows.Forms.ProgressBar();
-            this.pgb_eh = new System.Windows.Forms.ProgressBar();
-            this.pic_EneAtt = new System.Windows.Forms.PictureBox();
-            this.pic_ChrAtt = new System.Windows.Forms.PictureBox();
+            this.pgb_playerHealth = new System.Windows.Forms.ProgressBar();
+            this.pgb_EnemyHealth = new System.Windows.Forms.ProgressBar();
+            this.pic_EnemyAttack = new System.Windows.Forms.PictureBox();
+            this.pic_PlayerAttack = new System.Windows.Forms.PictureBox();
             this.txt_en = new System.Windows.Forms.TextBox();
             this.txt_pn = new System.Windows.Forms.TextBox();
             this.txt_Turns = new System.Windows.Forms.TextBox();
             this.btn_SaveGame = new System.Windows.Forms.Button();
             this.expBar = new System.Windows.Forms.ProgressBar();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_EnemyAttack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_PlayerAttack)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Quit
@@ -56,39 +56,39 @@
             // 
             // pgb_ph
             // 
-            this.pgb_ph.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.pgb_ph.Location = new System.Drawing.Point(63, 971);
-            this.pgb_ph.Name = "pgb_ph";
-            this.pgb_ph.Size = new System.Drawing.Size(430, 29);
-            this.pgb_ph.TabIndex = 16;
+            this.pgb_playerHealth.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.pgb_playerHealth.Location = new System.Drawing.Point(63, 971);
+            this.pgb_playerHealth.Name = "pgb_ph";
+            this.pgb_playerHealth.Size = new System.Drawing.Size(430, 29);
+            this.pgb_playerHealth.TabIndex = 16;
             // 
             // pgb_eh
             // 
-            this.pgb_eh.BackColor = System.Drawing.Color.Yellow;
-            this.pgb_eh.Location = new System.Drawing.Point(1451, 981);
-            this.pgb_eh.Name = "pgb_eh";
-            this.pgb_eh.Size = new System.Drawing.Size(430, 29);
-            this.pgb_eh.TabIndex = 19;
+            this.pgb_EnemyHealth.BackColor = System.Drawing.Color.Yellow;
+            this.pgb_EnemyHealth.Location = new System.Drawing.Point(1451, 981);
+            this.pgb_EnemyHealth.Name = "pgb_eh";
+            this.pgb_EnemyHealth.Size = new System.Drawing.Size(430, 29);
+            this.pgb_EnemyHealth.TabIndex = 19;
             // 
             // pic_EneAtt
             // 
-            this.pic_EneAtt.BackColor = System.Drawing.Color.Transparent;
-            this.pic_EneAtt.Location = new System.Drawing.Point(1485, 380);
-            this.pic_EneAtt.Name = "pic_EneAtt";
-            this.pic_EneAtt.Size = new System.Drawing.Size(369, 575);
-            this.pic_EneAtt.TabIndex = 18;
-            this.pic_EneAtt.TabStop = false;
-            this.pic_EneAtt.Click += new System.EventHandler(this.pic_EneAtt_Click);
+            this.pic_EnemyAttack.BackColor = System.Drawing.Color.Transparent;
+            this.pic_EnemyAttack.Location = new System.Drawing.Point(1485, 380);
+            this.pic_EnemyAttack.Name = "pic_EneAtt";
+            this.pic_EnemyAttack.Size = new System.Drawing.Size(369, 575);
+            this.pic_EnemyAttack.TabIndex = 18;
+            this.pic_EnemyAttack.TabStop = false;
+            this.pic_EnemyAttack.Click += new System.EventHandler(this.pic_EnemyAttack_Click);
             // 
             // pic_ChrAtt
             // 
-            this.pic_ChrAtt.BackColor = System.Drawing.Color.Transparent;
-            this.pic_ChrAtt.Location = new System.Drawing.Point(95, 380);
-            this.pic_ChrAtt.Name = "pic_ChrAtt";
-            this.pic_ChrAtt.Size = new System.Drawing.Size(369, 575);
-            this.pic_ChrAtt.TabIndex = 17;
-            this.pic_ChrAtt.TabStop = false;
-            this.pic_ChrAtt.Click += new System.EventHandler(this.pic_ChrAtt_Click);
+            this.pic_PlayerAttack.BackColor = System.Drawing.Color.Transparent;
+            this.pic_PlayerAttack.Location = new System.Drawing.Point(95, 380);
+            this.pic_PlayerAttack.Name = "pic_ChrAtt";
+            this.pic_PlayerAttack.Size = new System.Drawing.Size(369, 575);
+            this.pic_PlayerAttack.TabIndex = 17;
+            this.pic_PlayerAttack.TabStop = false;
+            this.pic_PlayerAttack.Click += new System.EventHandler(this.pic_PlayerAttack_Click);
             // 
             // txt_en
             // 
@@ -109,7 +109,6 @@
             this.txt_pn.ReadOnly = true;
             this.txt_pn.Size = new System.Drawing.Size(211, 49);
             this.txt_pn.TabIndex = 23;
-            this.txt_pn.TextChanged += new System.EventHandler(this.txt_pn_TextChanged);
             // 
             // txt_Turns
             // 
@@ -150,10 +149,10 @@
             this.Controls.Add(this.txt_Turns);
             this.Controls.Add(this.txt_pn);
             this.Controls.Add(this.txt_en);
-            this.Controls.Add(this.pgb_eh);
-            this.Controls.Add(this.pic_EneAtt);
-            this.Controls.Add(this.pic_ChrAtt);
-            this.Controls.Add(this.pgb_ph);
+            this.Controls.Add(this.pgb_EnemyHealth);
+            this.Controls.Add(this.pic_EnemyAttack);
+            this.Controls.Add(this.pic_PlayerAttack);
+            this.Controls.Add(this.pgb_playerHealth);
             this.Controls.Add(this.btn_Quit);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -162,8 +161,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Combot";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_EneAtt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ChrAtt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_EnemyAttack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_PlayerAttack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,10 +170,10 @@
 
         #endregion
         private System.Windows.Forms.Button btn_Quit;
-        private System.Windows.Forms.ProgressBar pgb_ph;
-        private System.Windows.Forms.PictureBox pic_ChrAtt;
-        private System.Windows.Forms.PictureBox pic_EneAtt;
-        private System.Windows.Forms.ProgressBar pgb_eh;
+        private System.Windows.Forms.ProgressBar pgb_playerHealth;
+        private System.Windows.Forms.PictureBox pic_PlayerAttack;
+        private System.Windows.Forms.PictureBox pic_EnemyAttack;
+        private System.Windows.Forms.ProgressBar pgb_EnemyHealth;
         private System.Windows.Forms.TextBox txt_en;
         private System.Windows.Forms.TextBox txt_pn;
         private System.Windows.Forms.TextBox txt_Turns;

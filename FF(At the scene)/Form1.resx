@@ -124,7 +124,8 @@ Control:
 Choose - Display the current character choose.
 Exit -Closes the Application
 Return to Menu: Return you back to the main menu
-Attack - queues character for  an attack on a enemy on your turn/once ready to attack click your enemy of choose to attack
+Return to Menu: Returns yo back to the game 
+Attack - Click on player to attack enemy on you turn
 Save - Saves current state of game 
 Load - Load last state of the game </value>
   </data>
